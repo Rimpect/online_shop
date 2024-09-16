@@ -102,3 +102,124 @@ ul {
     padding-left: 100px;
     padding-right: 100px;
 }
+
+
+.rectangles-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.rectangle-1 {
+    display: flex;
+    background-color: #ffffff;
+    color: #FFFFFF;
+    padding: 40px;
+    text-align: center;
+    margin: 20px 0;
+    height: 50vh;
+}
+.rectangle {
+    display: flex;
+    flex-direction: column;
+    background-color: #474747;
+    color: #000000;
+  
+    text-align: center;
+    width: 48%;
+    height: 70vh;
+    margin: 30px; /* Добавлен отступ между прямоугольниками */
+}
+
+.left-part {
+    flex: 0 0 30%; /* Левая часть занимает 30% ширины */
+    background-color: #ffffff;
+    color: white;
+    padding: 20px;
+    position: relative;
+  
+}
+
+.right-part {
+    flex: 0 0 65%; /* Правая часть занимает 70% ширины */
+    background-color: #474747;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    
+}
+.top-part {
+    flex: 0 0 20%; /* Верхняя часть занимает 20% высоты */
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: 36px;
+    font-family: 'Times New Roman', Times, serif; /* поменять на roboto */
+    border: 2px solid rgb(0, 0, 0);
+}
+.low-part {
+    flex: 0 0 80%; /* Нижняя часть занимает 80% высоты */
+    background-color: #2196F3;
+    color: rgb(0, 0, 0);
+    
+}
+.overlapping-element {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% + 30%); /* Ширина 100% левой части + 30% правой части */
+    height: 50%;
+    transform: translateY(20%);
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+        /* Изолированные стили для карусели */
+        .carousel-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .carousel {
+            width: 90%; /* Карусель занимает 90% от ширины экрана */
+            margin: 0 auto;
+            height: 50vh; /* Увеличиваем высоту карусели */
+        }
+        .carousel .carousel-item {
+            width: 33.33% !important;
+            height: 100% !important;
+        }
+        .carousel .carousel-item img {
+            height: 100%;
+            object-fit: cover;
+        }
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0 64px;
+            box-sizing: border-box;
+            height: 100%;
+            
+        }
+        .carousel-controls button {
+            background-color: #ffffff;
+            color:#000000;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 36px;
+        }
+        .carousel-controls button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }

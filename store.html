@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница товаров</title>
+    <!-- Подключение Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <style>
+        /* Изолированные стили для страницы */
+        .categories {
+            width: 20%;
+            float: left;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .products {
+            width: 80%;
+            float: left;
+            padding: 10px;
+            box-sizing: border-box;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .product-item {
+            width: 33.33%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .product-item img {
+            width: 100%;
+            height: auto;
+        }
+        .image-blocks {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            margin: 20px auto;
+        }
+        .image-block {
+            width: 23%;
+            text-align: center;
+        }
+        .image-block img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Список категорий слева -->
+    <div class="categories">
+        <ul>
+            <li><a href="#!">Категория 1</a></li>
+            <li><a href="#!">Категория 2</a></li>
+            <li><a href="#!">Категория 3</a></li>
+            <li><a href="#!">Категория 4</a></li>
+            <li><a href="#!">Категория 5</a></li>
+        </ul>
+    </div>
+
+    <!-- Ряды картинок с товарами справа -->
+    <div class="products">
+        <div class="product-item">
+            <img src="https://via.placeholder.com/200x200?text=Товар+1" alt="Товар 1">
+        </div>
+        <div class="product-item">
+            <img src="https://via.placeholder.com/200x200?text=Товар+2" alt="Товар 2">
+        </div>
+        <div class="product-item">
+            <img src="https://via.placeholder.com/200x200?text=Товар+3" alt="Товар 3">
+        </div>
+        <div class="product-item">
+            <img src="https://via.placeholder.com/200x200?text=Товар+4" alt="Товар 4">
+        </div>
+        <div class="product-item">
+            <img src="https://via.placeholder.com/200x200?text=Товар+5" alt="Товар 5">
+        </div>
+        <div class="product-item">
+            <img src="https://via.placeholder.com/200x200?text=Товар+6" alt="Товар 6">
+        </div>
+    </div>
+
+    <!-- 4 блока для изображений внизу -->
+    <div class="image-blocks">
+        <div class="image-block">
+            <img src="https://via.placeholder.com/800x400?text=Изображение+1" alt="Изображение 1">
+            <p>Описание 1</p>
+        </div>
+        <div class="image-block">
+            <img src="https://via.placeholder.com/800x400?text=Изображение+2" alt="Изображение 2">
+            <p>Описание 2</p>
+        </div>
+        <div class="image-block">
+            <img src="https://via.placeholder.com/800x400?text=Изображение+3" alt="Изображение 3">
+            <p>Описание 3</p>
+        </div>
+        <div class="image-block">
+            <img src="https://via.placeholder.com/800x400?text=Изображение+4" alt="Изображение 4">
+            <p>Описание 4</p>
+        </div>
+    </div>
+</body>
+</html>
