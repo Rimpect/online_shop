@@ -5,15 +5,11 @@
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     }
-.header { 
-    grid-area: 1 / 1 / 2 / 2; 
-    height: 40%; /* подправить потом */
-    background-color: #1D1A1A; 
-    color: #FFFFFF;
-}
+
 body {
     margin: 0;
     padding: 0;
+    font-family: 'MyCustomFont_Roboto', sans-serif;;
 }
 .wrapper{
     max-width: 1080;
@@ -28,81 +24,6 @@ body {
 .div4 { 
     grid-area: 4 / 1 / 5 / 2; 
 }
-.footer { 
-    grid-area: 5 / 1 / 6 / 2; 
-    height: 100%; /* подправить потом */
-    background-color: #1D1A1A; 
-    color: #FFFFFF;
-    
-}
-.header_logo{
-    padding-left: 100px;
-    padding-right: 100px;
-    display: flex;
-    align-items: center; /* Выравнивание по вертикали */
-    justify-content: flex-start; /* Выравнивание по горизонтали слева */
-    font-size: 24px;
-    font-weight: bold;
-    align-self: flex-start;
-    margin-top: 10px;
-}
-.header_wrapper{
-    display:flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    justify-content: space-between;
-}
-.header_list{
-    display: flex;
-    flex-wrap: wrap;
-
-}
-.header_item{
-    margin-right: 80px;
-}
-.header_link{
-    font-size: 20px;
-    color: #FFFFFF;
-    line-height: 24px;
-    font-family: 'Times New Roman', Times, serif;/* изменить на roboto*/
-}
-a {
-    text-decoration: none;
-}
-ul {
-    list-style-type: none; /* Убирает маркеры */
-    padding-left: 0; /* Убирает отступ слева */
-}
-.footer_wrapper{
-    display:flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    justify-content: space-between;
-}
-.footer_list{
-    line-height: 50px ;
-}
-.footer_list_pic{
-    margin-right: 80px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding-top:30px ; /* делает отступ сверху  для 5 картинок*/
-}
-.footer_item_pic{
-    display:flex;
-    flex-wrap: wrap;
-    margin-right: 80px;/* делает отступ справа в 80px   для 5 картинок по пикселям надо будет везде править!!!!!!!*/
-}
-.footer_nav{
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding-left: 100px;
-    padding-right: 100px;
-}
-
 
 .rectangles-container {
     display: flex;
@@ -177,49 +98,47 @@ ul {
     justify-content: center;
     border: 2px solid rgb(0, 0, 0);
 }
-
-        /* Изолированные стили для карусели */
-        .carousel-container {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-        }
-        .carousel {
-            width: 90%; /* Карусель занимает 90% от ширины экрана */
-            margin: 0 auto;
-            height: 50vh; /* Увеличиваем высоту карусели */
-        }
-        .carousel .carousel-item {
-            width: 33.33% !important;
-            height: 100% !important;
-        }
-        .carousel .carousel-item img {
-            height: 100%;
-            object-fit: cover;
-        }
-        .carousel-controls {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            padding: 0 64px;
-            box-sizing: border-box;
-            height: 100%;
-            
-        }
-        .carousel-controls button {
-            background-color: #ffffff;
-            color:#000000;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 36px;
-        }
-        .carousel-controls button:hover {
-            background-color: rgba(0, 0, 0, 0.7);
-        }
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.carousel {
+    width: 90%; /* Карусель занимает 90% от ширины экрана */
+    margin: 0 auto;
+    height: 50vh; /* Увеличиваем высоту карусели */
+}
+.carousel .carousel-item {
+    width: 33.33% !important;
+    height: 100% !important;
+}
+.carousel .carousel-item img {
+    height: 100%;
+    object-fit: cover;
+}
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 64px;
+    box-sizing: border-box;
+    height: 100%;
+    
+}
+.carousel-controls button {
+    background-color: #ffffff;
+    color:#000000;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 36px;
+}
+.carousel-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}

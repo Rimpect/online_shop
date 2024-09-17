@@ -1,0 +1,81 @@
+.product-page {
+    display: flex;
+    padding: 20px;
+}
+.thumbnails {
+    width: 20%;
+    margin-right: 20px;
+}
+.thumbnails img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.product-image {
+    width: 50%;
+    margin-right: 20px;
+    position: relative;
+}
+.product-image img {
+    width: 100%;
+    height: auto;
+}
+.product-image .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.product-image .overlay img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.product-info {
+    width: 30%;
+}
+.product-info h2 {
+    margin-top: 0;
+}
+.product-info .price {
+    font-size: 24px;
+    font-weight: bold;
+}
+.product-info .description {
+    margin-bottom: 20px;
+}
+.product-info .characteristics {
+    margin-bottom: 20px;
+}
+.product-info .characteristics p {
+    margin: 5px 0;
+}
+.product-info .add-to-cart {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.related-products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.related-product {
+    width: 30%;
+    margin-bottom: 20px;
+}
+.related-product img {
+    width: 100%;
+    height: auto;
+}

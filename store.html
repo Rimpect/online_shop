@@ -4,50 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Страница товаров</title>
+    <link rel="stylesheet" href="/css/header_and_footer.css">
+    <link rel="stylesheet" href="/css/store_page.css">
     <!-- Подключение Materialize CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
-    <style>
-        /* Изолированные стили для страницы */
-        .categories {
-            width: 20%;
-            float: left;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-        .products {
-            width: 80%;
-            float: left;
-            padding: 10px;
-            box-sizing: border-box;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .product-item {
-            width: 33.33%;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-        .product-item img {
-            width: 100%;
-            height: auto;
-        }
-        .image-blocks {
-            display: flex;
-            justify-content: space-between;
-            width: 90%;
-            margin: 20px auto;
-        }
-        .image-block {
-            width: 23%;
-            text-align: center;
-        }
-        .image-block img {
-            width: 100%;
-            height: auto;
-        }
-    </style>
 </head>
 <body>
+    <div class="header">
+        <div class="wrapper">
+            <div class="header_wrapper">
+                <div class = header_logo> LOGO
+                    <a href="/" class="header_logo_link">
+                        <!-- добавить лого -->
+                    </a>
+                </div>
+              
+                    <ul class="header_list">
+                        <li class="header_item">
+                            <a href="#!" class="header_link">НОВОСТИ</a>
+                        </li>
+                        <li class="header_item">
+                            <a href="#!" class="header_link"> О НАС</a>
+                        </li>
+                        <li class="header_item">
+                            <a href="#!" class="header_link">НОВИНКИ</a>
+                        </li>
+                        <li class="header_item">
+                            <a href="#!" class="header_link">КОНТАКТЫ</a>
+                        </li>
+                        <li class="header_item">
+                            <a href="#!" class="header_link">
+                                <img src="./img/header/shopping_cart.svg" alt="" class = header_cart_pic>
+                            </a>
+                        </li>
+                    </ul>
+                
+            </div>
+        </div>
+    </div>
     <!-- Список категорий слева -->
     <div class="categories">
         <ul>
@@ -98,6 +92,55 @@
         <div class="image-block">
             <img src="https://via.placeholder.com/800x400?text=Изображение+4" alt="Изображение 4">
             <p>Описание 4</p>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer_nav">
+            <ul class="footer_list">
+                <li class="footer_item">
+                    Пн-Вс 10:00-19:00
+                </li>
+                <li class="footer_item">
+                    +(996)703-717-108
+                </li>
+            </ul>
+            <ul class="footer_list">
+                <li class="footer_item">
+                    Мужчинам
+                </li>
+                <li class="footer_item">
+                    Женщинам
+                </li>
+                <li class="footer_item">
+                    Новинки
+                </li>
+            </ul>
+            <ul class="footer_list">
+                <li class="footer_item">
+                    Оплата
+                </li>
+                <li class="footer_item">
+                    Доставка
+                </li>
+            </ul>
+            <ul class="footer_list_pic">
+                <li class="footer_item_pic">
+                     <img src="./img/footer/entypo-social_instagram-with-circle.png" alt="" class = header_cart_pic>
+                </li>
+                <li class="footer_item_pic">
+                    <img src="./img/footer/entypo-social_vk-with-circle.png" alt="" class = header_cart_pic>
+                </li>
+                <li class="footer_item_pic">
+                    <img src="./img/footer/entypo-social_twitter-with-circle.png" alt="" class = header_cart_pic>
+                </li>
+                <li class="footer_item_pic">
+                    <img src="./img/footer/entypo-social_facebook-with-circle.png" alt="" class = header_cart_pic>
+                </li>
+                <li class="footer_item_pic">
+                    <img src="./img/footer/entypo-social_youtube-with-circle.png" alt="" >
+                </li>
+            </ul>
+
         </div>
     </div>
 </body>

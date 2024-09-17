@@ -1,0 +1,37 @@
+.categories {
+    width: 20%;
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.products {
+    width: 80%;
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+}
+.product-item {
+    width: 33.33%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.product-item img {
+    width: 100%;
+    height: auto;
+}
+.image-blocks {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 20px auto;
+}
+.image-block {
+    width: 23%;
+    text-align: center;
+}
+.image-block img {
+    width: 100%;
+    height: auto;
+}

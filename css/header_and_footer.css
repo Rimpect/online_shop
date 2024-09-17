@@ -1,0 +1,88 @@
+.header { 
+    grid-area: 1 / 1 / 2 / 2; 
+    height: 40%; /* подправить потом */
+    background-color: #1D1A1A; 
+    color: #FFFFFF;
+}
+.footer { 
+    grid-area: 5 / 1 / 6 / 2; 
+    height: 100%; /* подправить потом */
+    background-color: #1D1A1A; 
+    color: #FFFFFF;
+    
+}
+
+.header_logo{
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    align-items: center; /* Выравнивание по вертикали */
+    justify-content: flex-start; /* Выравнивание по горизонтали слева */
+    font-size: 24px;
+    font-weight: bold;
+    align-self: flex-start;
+    margin-top: 10px;
+}
+.header_wrapper{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.header_list{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.header_item{
+    margin-right: 80px;
+}
+.header_link{
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 24px;
+    font-family: 'Times New Roman', Times, serif;/* изменить на roboto*/
+}
+
+a {
+    text-decoration: none;
+}
+ul {
+    list-style-type: none; /* Убирает маркеры */
+    padding-left: 0; /* Убирает отступ слева */
+}
+.footer_wrapper{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.footer_list{
+    line-height: 50px ;
+}
+.footer_list_pic{
+    margin-right: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-top:30px ; /* делает отступ сверху  для 5 картинок*/
+}
+.footer_item_pic{
+    display:flex;
+    flex-wrap: wrap;
+    margin-right: 80px;/* делает отступ справа в 80px   для 5 картинок по пикселям надо будет везде править!!!!!!!*/
+}
+.footer_nav{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+@font-face {
+    font-family: 'MyCustomFont_Roboto'; /* Название шрифта, которое вы будете использовать в CSS */
+    src: url('/fonts/Roboto-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

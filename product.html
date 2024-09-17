@@ -4,94 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Страница товара</title>
+    <link rel="stylesheet" href="/css/header_and_footer.css">
+    <link rel="stylesheet" href="/css/product_page.css">
     <!-- Подключение Materialize CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
-    <style>
-        /* Изолированные стили для страницы */
-        .product-page {
-            display: flex;
-            padding: 20px;
-        }
-        .thumbnails {
-            width: 20%;
-            margin-right: 20px;
-        }
-        .thumbnails img {
-            width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-            cursor: pointer;
-        }
-        .product-image {
-            width: 50%;
-            margin-right: 20px;
-            position: relative;
-        }
-        .product-image img {
-            width: 100%;
-            height: auto;
-        }
-        .product-image .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: none;
-        }
-        .product-image .overlay img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .product-info {
-            width: 30%;
-        }
-        .product-info h2 {
-            margin-top: 0;
-        }
-        .product-info .price {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        .product-info .description {
-            margin-bottom: 20px;
-        }
-        .product-info .characteristics {
-            margin-bottom: 20px;
-        }
-        .product-info .characteristics p {
-            margin: 5px 0;
-        }
-        .product-info .add-to-cart {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .related-products {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        .related-product {
-            width: 30%;
-            margin-bottom: 20px;
-        }
-        .related-product img {
-            width: 100%;
-            height: auto;
-        }
-    </style>
 </head>
 <body>
+    <div class="header">
+        <div class="wrapper">
+            <div class="header_wrapper">
+                <div class = header_logo> LOGO
+                    <a href="/" class="header_logo_link">
+                        <!-- добавить лого -->
+                    </a>
+                </div>
+              
+                    <ul class="header_list">
+                        <li class="header_item">
+                            <a href="#!" class="header_link">НОВОСТИ</a>
+                        </li>
+                        <li class="header_item">
+                            <a href="#!" class="header_link"> О НАС</a>
+                        </li>
+                        <li class="header_item">
+                            <a href="#!" class="header_link">НОВИНКИ</a>
+                        </li>
+                        <li class="header_item">
+                            <a href="#!" class="header_link">КОНТАКТЫ</a>
+                        </li>
+                        <li class="header_item">
+                            <a href="#!" class="header_link">
+                                <img src="./img/header/shopping_cart.svg" alt="" class = header_cart_pic>
+                            </a>
+                        </li>
+                    </ul>
+                
+            </div>
+        </div>
+    </div>
     <div class="product-page">
         <!-- Миниатюры изображений слева -->
         <div class="thumbnails">
@@ -154,5 +104,54 @@
             overlay.style.display = 'none';
         }
     </script>
+    <div class="footer">
+        <div class="footer_nav">
+            <ul class="footer_list">
+                <li class="footer_item">
+                    Пн-Вс 10:00-19:00
+                </li>
+                <li class="footer_item">
+                    +(996)703-717-108
+                </li>
+            </ul>
+            <ul class="footer_list">
+                <li class="footer_item">
+                    Мужчинам
+                </li>
+                <li class="footer_item">
+                    Женщинам
+                </li>
+                <li class="footer_item">
+                    Новинки
+                </li>
+            </ul>
+            <ul class="footer_list">
+                <li class="footer_item">
+                    Оплата
+                </li>
+                <li class="footer_item">
+                    Доставка
+                </li>
+            </ul>
+            <ul class="footer_list_pic">
+                <li class="footer_item_pic">
+                     <img src="./img/footer/entypo-social_instagram-with-circle.png" alt="" class = header_cart_pic>
+                </li>
+                <li class="footer_item_pic">
+                    <img src="./img/footer/entypo-social_vk-with-circle.png" alt="" class = header_cart_pic>
+                </li>
+                <li class="footer_item_pic">
+                    <img src="./img/footer/entypo-social_twitter-with-circle.png" alt="" class = header_cart_pic>
+                </li>
+                <li class="footer_item_pic">
+                    <img src="./img/footer/entypo-social_facebook-with-circle.png" alt="" class = header_cart_pic>
+                </li>
+                <li class="footer_item_pic">
+                    <img src="./img/footer/entypo-social_youtube-with-circle.png" alt="" >
+                </li>
+            </ul>
+
+        </div>
+    </div>
 </body>
 </html>
