@@ -86,3 +86,9 @@ ul {
     font-weight: normal;
     font-style: normal;
 }
+.link_{
+    font-size: 38px;
+    color: #000000;
+    line-height: 24px;
+    font-family: 'Times New Roman', Times, serif;/* изменить на roboto*/
+}

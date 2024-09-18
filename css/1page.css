@@ -48,11 +48,11 @@ body {
     text-align: center;
     width: 48%;
     height: 70vh;
-    margin: 30px; /* Добавлен отступ между прямоугольниками */
+    margin: 30px;
 }
 
 .left-part {
-    flex: 0 0 30%; /* Левая часть занимает 30% ширины */
+    flex: 0 0 30%;
     background-color: #ffffff;
     color: white;
     padding: 20px;
@@ -61,14 +61,14 @@ body {
 }
 
 .right-part {
-    flex: 0 0 65%; /* Правая часть занимает 70% ширины */
+    flex: 0 0 65%; 
     background-color: #474747;
     color: rgb(255, 255, 255);
     padding: 20px;
     
 }
 .top-part {
-    flex: 0 0 20%; /* Верхняя часть занимает 20% высоты */
+    flex: 0 0 20%; 
     background-color: #ffffff;
     color: rgb(0, 0, 0);
     font-size: 36px;
@@ -76,7 +76,7 @@ body {
     border: 2px solid rgb(0, 0, 0);
 }
 .low-part {
-    flex: 0 0 80%; /* Нижняя часть занимает 80% высоты */
+    flex: 0 0 80%; 
     background-color: #2196F3;
     color: rgb(0, 0, 0);
     
@@ -85,7 +85,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: calc(100% + 30%); /* Ширина 100% левой части + 30% правой части */
+    width: calc(100% + 30%); 
     height: 50%;
     transform: translateY(20%);
     background-color: #ffffff;
@@ -94,6 +94,7 @@ body {
     text-align: center;
     border-radius: 5px;
     display: flex;
+    flex-direction: column  ;
     align-items: center;
     justify-content: center;
     border: 2px solid rgb(0, 0, 0);
@@ -106,9 +107,9 @@ body {
     width: 100%;
 }
 .carousel {
-    width: 90%; /* Карусель занимает 90% от ширины экрана */
+    width: 90%; 
     margin: 0 auto;
-    height: 50vh; /* Увеличиваем высоту карусели */
+    height: 50vh;
 }
 .carousel .carousel-item {
     width: 33.33% !important;
@@ -141,4 +142,22 @@ body {
 }
 .carousel-controls button:hover {
     background-color: rgba(0, 0, 0, 0.7);
+}
+.link_store{
+    font-size: 38px;
+    color: #000000;
+    line-height: 24px; 
+    font-family: 'Times New Roman', Times, serif;/* изменить на roboto*/
+}
+.custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
 }
