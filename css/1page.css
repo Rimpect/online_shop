@@ -86,7 +86,7 @@ body {
     top: 0;
     left: 0;
     width: calc(100% + 30%); 
-    height: 50%;
+    height: 65%;
     transform: translateY(20%);
     background-color: #ffffff;
     color: rgb(0, 0, 0);
@@ -98,6 +98,9 @@ body {
     align-items: center;
     justify-content: center;
     border: 2px solid rgb(0, 0, 0);
+}
+.big_word{
+    font-size: 48px;
 }
 .carousel-container {
     position: relative;
@@ -126,7 +129,7 @@ body {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 0 64px;
+    padding: 0 0px;
     box-sizing: border-box;
     height: 100%;
     
@@ -140,9 +143,7 @@ body {
     border-radius: 5px;
     font-size: 36px;
 }
-.carousel-controls button:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-}
+
 .link_store{
     font-size: 38px;
     color: #000000;
@@ -158,6 +159,60 @@ body {
     text-decoration: none;
     border: none;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 24px;
     border-radius: 5px;
+}
+@media (max-width: 768px) {
+    .parent {
+        grid-template-rows: repeat(5, auto); /* Автоматическая высота строк */
+    }
+
+    .rectangles-container {
+        flex-direction: column; /* Вертикальное расположение прямоугольников */
+    }
+
+    .rectangle-1, .rectangle {
+        width: 100%; /* Занимаем всю ширину на мобильных устройствах */
+        height: auto; /* Автоматическая высота */
+        margin: 10px 0; /* Отступы между прямоугольниками */
+    }
+
+    .left-part, .right-part, .top-part, .low-part {
+        flex: 1 1 auto; /* Автоматическая высота */
+    }
+
+    .overlapping-element {
+        width: 100%; /* Занимаем всю ширину */
+        height: auto; /* Автоматическая высота */
+        transform: translateY(0); /* Убираем смещение */
+    }
+
+    .carousel {
+        width: 100%; /* Занимаем всю ширину */
+        height: auto; /* Автоматическая высота */
+    }
+
+    .carousel .carousel-item {
+        width: 100% !important; /* Занимаем всю ширину */
+        height: auto !important; /* Автоматическая высота */
+    }
+
+    .carousel-controls {
+        padding: 0 10px; /* Отступы для мобильных устройств */
+    }
+
+    .carousel-controls button {
+        padding: 5px 10px; /* Уменьшаем отступы */
+        font-size: 18px; /* Уменьшаем размер шрифта */
+    }
+
+    .link_store {
+        font-size: 24px; /* Уменьшаем размер шрифта */
+        line-height: 1.5; /* Увеличиваем межстрочный интервал */
+    }
+
+    .custom-button {
+        padding: 8px 16px; /* Уменьшаем отступы */
+        font-size: 14px; /* Уменьшаем размер шрифта */
+    }
 }

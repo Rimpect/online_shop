@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "name": "Товар 1",
+        "price": 10,
+        "color": "Черный",
+        "size": "S",
+        "material": "Хлопок",
+        "images": [
+            "https://via.placeholder.com/100x100?text=Изображение+1",
+            "https://via.placeholder.com/100x100?text=Изображение+2",
+            "https://via.placeholder.com/100x100?text=Изображение+3"
+        ],
+        "mainImage": "https://via.placeholder.com/800x600?text=Главное+Изображение+1",
+        "relatedProducts": [
+            {
+                "id": 2,
+                "image": "https://via.placeholder.com/200x200?text=Товар+2"
+            },
+            {
+                "id": 3,
+                "image": "https://via.placeholder.com/200x200?text=Товар+3"
+            },
+            {
+                "id": 4,
+                "image": "https://via.placeholder.com/200x200?text=Товар+4"
+            },
+            {
+                "id": 5,
+                "image": "https://via.placeholder.com/200x200?text=Товар+5"
+            },
+            {
+                "id": 6,
+                "image": "https://via.placeholder.com/200x200?text=Товар+6"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Товар 2",
+        "price": 20,
+        "color": "Белый",
+        "size": "M",
+        "material": "Хлопок",
+        "images": [
+            "https://via.placeholder.com/100x100?text=Изображение+1",
+            "https://via.placeholder.com/100x100?text=Изображение+2",
+            "https://via.placeholder.com/100x100?text=Изображение+3"
+        ],
+        "mainImage": "https://via.placeholder.com/800x600?text=Главное+Изображение+2",
+        "relatedProducts": [
+            {
+                "id": 1,
+                "image": "https://via.placeholder.com/200x200?text=Товар+1"
+            },
+            {
+                "id": 3,
+                "image": "https://via.placeholder.com/200x200?text=Товар+3"
+            },
+            {
+                "id": 4,
+                "image": "https://via.placeholder.com/200x200?text=Товар+4"
+            },
+            {
+                "id": 5,
+                "image": "https://via.placeholder.com/200x200?text=Товар+5"
+            },
+            {
+                "id": 6,
+                "image": "https://via.placeholder.com/200x200?text=Товар+6"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Товар 3",
+        "price": 30,
+        "color": "Синий",
+        "size": "L",
+        "material": "Хлопок",
+        "images": [
+            "https://via.placeholder.com/100x100?text=Изображение+1",
+            "https://via.placeholder.com/100x100?text=Изображение+2",
+            "https://via.placeholder.com/100x100?text=Изображение+3"
+        ],
+        "mainImage": "https://via.placeholder.com/800x600?text=Главное+Изображение+3",
+        "relatedProducts": [
+            {
+                "id": 1,
+                "image": "https://via.placeholder.com/200x200?text=Товар+1"
+            },
+            {
+                "id": 2,
+                "image": "https://via.placeholder.com/200x200?text=Товар+2"
+            },
+            {
+                "id": 4,
+                "image": "https://via.placeholder.com/200x200?text=Товар+4"
+            },
+            {
+                "id": 5,
+                "image": "https://via.placeholder.com/200x200?text=Товар+5"
+            },
+            {
+                "id": 6,
+                "image": "https://via.placeholder.com/200x200?text=Товар+6"
+            }
+        ]
+    }
+]

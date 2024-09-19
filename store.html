@@ -8,40 +8,83 @@
     <link rel="stylesheet" href="/css/store_page.css">
     <!-- Подключение Materialize CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <style>
+        .product-item {
+            position: relative;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .product-item .preview {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .product-item:hover .preview {
+            display: block;
+        }
+        .pagination {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .product-price {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <div class="header">
         <div class="wrapper">
             <div class="header_wrapper">
-                <div class = header_logo> LOGO
-                    <a href="/" class="header_logo_link">
-                        <!-- добавить лого -->
+                <div class="header_logo"> 
+                    <a href="/index.html" class="header_logo_link">
+                        LOGO
                     </a>
                 </div>
-              
-                    <ul class="header_list">
-                        <li class="header_item">
-                            <a href="#!" class="header_link">НОВОСТИ</a>
-                        </li>
-                        <li class="header_item">
-                            <a href="#!" class="header_link"> О НАС</a>
-                        </li>
-                        <li class="header_item">
-                            <a href="#!" class="header_link">НОВИНКИ</a>
-                        </li>
-                        <li class="header_item">
-                            <a href="#!" class="header_link">КОНТАКТЫ</a>
-                        </li>
-                        <li class="header_item">
-                            <a href="#!" class="header_link">
-                                <img src="./img/header/shopping_cart.svg" alt="" class = header_cart_pic>
-                            </a>
-                        </li>
-                    </ul>
-                
+                <ul class="header_list">
+                    <li class="header_item">
+                        <a href="#!" class="header_link">НОВОСТИ</a>
+                    </li>
+                    <li class="header_item">
+                        <a href="#!" class="header_link"> О НАС</a>
+                    </li>
+                    <li class="header_item">
+                        <a href="#!" class="header_link">НОВИНКИ</a>
+                    </li>
+                    <li class="header_item">
+                        <a href="#!" class="header_link">КОНТАКТЫ</a>
+                    </li>
+                    <li class="header_item">
+                        <a href="/shoping_card.html" class="header_link">
+                            <img src="./img/header/shopping_cart.svg" alt="" class="header_cart_pic">
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
+
+    <!-- Хлебные крошки -->
+    <div class="breadcrumbs" aria-label="Breadcrumb">
+        <div class="wrapper">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/category">Category</a></li>
+                <li><a href="/category/subcategory">Subcategory</a></li>
+                <li aria-current="page">Current Page</li>
+            </ol>
+        </div>
+    </div>
+
     <!-- Список категорий слева -->
     <div class="categories">
         <ul>
@@ -55,47 +98,171 @@
 
     <!-- Ряды картинок с товарами справа -->
     <div class="products">
-        <div class="product-item">
-            <img src="https://via.placeholder.com/200x200?text=Товар+1" alt="Товар 1">
+        <div class="product-item" data-id="1" data-name="Товар 1" data-price="10" data-color="Черный" data-size="S">
+            <a href="/product.html?id=1">
+                <img src="https://via.placeholder.com/200x200?text=Товар+1" alt="Товар 1">
+            </a>
+            <div class="preview">
+                <h5>Товар 1</h5>
+                <p>Цена: $10</p>
+                <p>Цвет: Черный</p>
+                <p>Размер: S</p>
+                <button class="btn add-to-cart">Добавить в корзину</button>
+            </div>
+            <div class="product-price">$10</div>
         </div>
-        <div class="product-item">
-            <a href="/product.html">
+        <div class="product-item" data-id="2" data-name="Товар 2" data-price="20" data-color="Белый" data-size="M">
+            <a href="/product.html?id=2">
                 <img src="https://via.placeholder.com/200x200?text=Товар+2" alt="Товар 2">
             </a>
+            <div class="preview">
+                <h5>Товар 2</h5>
+                <p>Цена: $20</p>
+                <p>Цвет: Белый</p>
+                <p>Размер: M</p>
+                <button class="btn add-to-cart">Добавить в корзину</button>
+            </div>
+            <div class="product-price">$20</div>
         </div>
-        <div class="product-item">
-            <img src="https://via.placeholder.com/200x200?text=Товар+3" alt="Товар 3">
+        <div class="product-item" data-id="3" data-name="Товар 3" data-price="30" data-color="Синий" data-size="L">
+            <a href="/product.html?id=3">
+                <img src="https://via.placeholder.com/200x200?text=Товар+3" alt="Товар 3">
+            </a>
+            <div class="preview">
+                <h5>Товар 3</h5>
+                <p>Цена: $30</p>
+                <p>Цвет: Синий</p>
+                <p>Размер: L</p>
+                <button class="btn add-to-cart">Добавить в корзину</button>
+            </div>
+            <div class="product-price">$30</div>
         </div>
-        <div class="product-item">
-            <img src="https://via.placeholder.com/200x200?text=Товар+4" alt="Товар 4">
+        <div class="product-item" data-id="4" data-name="Товар 4" data-price="40" data-color="Красный" data-size="XL">
+            <a href="/product.html?id=4">
+                <img src="https://via.placeholder.com/200x200?text=Товар+4" alt="Товар 4">
+            </a>
+            <div class="preview">
+                <h5>Товар 4</h5>
+                <p>Цена: $40</p>
+                <p>Цвет: Красный</p>
+                <p>Размер: XL</p>
+                <button class="btn add-to-cart">Добавить в корзину</button>
+            </div>
+            <div class="product-price">$40</div>
         </div>
-        <div class="product-item">
-            <img src="https://via.placeholder.com/200x200?text=Товар+5" alt="Товар 5">
+        <div class="product-item" data-id="5" data-name="Товар 5" data-price="50" data-color="Зеленый" data-size="S">
+            <a href="/product.html?id=5">
+                <img src="https://via.placeholder.com/200x200?text=Товар+5" alt="Товар 5">
+            </a>
+            <div class="preview">
+                <h5>Товар 5</h5>
+                <p>Цена: $50</p>
+                <p>Цвет: Зеленый</p>
+                <p>Размер: S</p>
+                <button class="btn add-to-cart">Добавить в корзину</button>
+            </div>
+            <div class="product-price">$50</div>
         </div>
-        <div class="product-item">
-            <img src="https://via.placeholder.com/200x200?text=Товар+6" alt="Товар 6">
+        <div class="product-item" data-id="6" data-name="Товар 6" data-price="60" data-color="Желтый" data-size="M">
+            <a href="/product.html?id=6">
+                <img src="https://via.placeholder.com/200x200?text=Товар+6" alt="Товар 6">
+            </a>
+            <div class="preview">
+                <h5>Товар 6</h5>
+                <p>Цена: $60</p>
+                <p>Цвет: Желтый</p>
+                <p>Размер: M</p>
+                <button class="btn add-to-cart">Добавить в корзину</button>
+            </div>
+            <div class="product-price">$60</div>
+        </div>
+        <div class="product-item" data-id="7" data-name="Товар 7" data-price="70" data-color="Черный" data-size="L">
+            <a href="/product.html?id=7">
+                <img src="https://via.placeholder.com/200x200?text=Товар+7" alt="Товар 7">
+            </a>
+            <div class="preview">
+                <h5>Товар 7</h5>
+                <p>Цена: $70</p>
+                <p>Цвет: Черный</p>
+                <p>Размер: L</p>
+                <button class="btn add-to-cart">Добавить в корзину</button>
+            </div>
+            <div class="product-price">$70</div>
+        </div>
+        <div class="product-item" data-id="8" data-name="Товар 8" data-price="80" data-color="Белый" data-size="XL">
+            <a href="/product.html?id=8">
+                <img src="https://via.placeholder.com/200x200?text=Товар+8" alt="Товар 8">
+            </a>
+            <div class="preview">
+                <h5>Товар 8</h5>
+                <p>Цена: $80</p>
+                <p>Цвет: Белый</p>
+                <p>Размер: XL</p>
+                <button class="btn add-to-cart">Добавить в корзину</button>
+            </div>
+            <div class="product-price">$80</div>
+        </div>
+        <div class="product-item" data-id="9" data-name="Товар 9" data-price="90" data-color="Синий" data-size="S">
+            <a href="/product.html?id=9">
+                <img src="https://via.placeholder.com/200x200?text=Товар+9" alt="Товар 9">
+            </a>
+            <div class="preview">
+                <h5>Товар 9</h5>
+                <p>Цена: $90</p>
+                <p>Цвет: Синий</p>
+                <p>Размер: S</p>
+                <button class="btn add-to-cart">Добавить в корзину</button>
+            </div>
+            <div class="product-price">$90</div>
+        </div>
+        <div class="product-item" data-id="10" data-name="Товар 10" data-price="100" data-color="Красный" data-size="M">
+            <a href="/product.html?id=10">
+                <img src="https://via.placeholder.com/200x200?text=Товар+10" alt="Товар 10">
+            </a>
+            <div class="preview">
+                <h5>Товар 10</h5>
+                <p>Цена: $100</p>
+                <p>Цвет: Красный</p>
+                <p>Размер: M</p>
+                <button class="btn add-to-cart">Добавить в корзину</button>
+            </div>
+            <div class="product-price">$100</div>
+        </div>
+        <div class="product-item" data-id="11" data-name="Товар 11" data-price="110" data-color="Зеленый" data-size="L">
+            <a href="/product.html?id=11">
+                <img src="https://via.placeholder.com/200x200?text=Товар+11" alt="Товар 11">
+            </a>
+            <div class="preview">
+                <h5>Товар 11</h5>
+                <p>Цена: $110</p>
+                <p>Цвет: Зеленый</p>
+                <p>Размер: L</p>
+                <button class="btn add-to-cart">Добавить в корзину</button>
+            </div>
+            <div class="product-price">$110</div>
+        </div>
+        <div class="product-item" data-id="12" data-name="Товар 12" data-price="120" data-color="Желтый" data-size="XL">
+            <a href="/product.html?id=12">
+                <img src="https://via.placeholder.com/200x200?text=Товар+12" alt="Товар 12">
+            </a>
+            <div class="preview">
+                <h5>Товар 12</h5>
+                <p>Цена: $120</p>
+                <p>Цвет: Желтый</p>
+                <p>Размер: XL</p>
+                <button class="btn add-to-cart">Добавить в корзину</button>
+            </div>
+            <div class="product-price">$120</div>
         </div>
     </div>
 
-    <!-- 4 блока для изображений внизу -->
-    <div class="image-blocks">
-        <div class="image-block">
-            <img src="https://via.placeholder.com/800x400?text=Изображение+1" alt="Изображение 1">
-            <p>Описание 1</p>
-        </div>
-        <div class="image-block">
-            <img src="https://via.placeholder.com/800x400?text=Изображение+2" alt="Изображение 2">
-            <p>Описание 2</p>
-        </div>
-        <div class="image-block">
-            <img src="https://via.placeholder.com/800x400?text=Изображение+3" alt="Изображение 3">
-            <p>Описание 3</p>
-        </div>
-        <div class="image-block">
-            <img src="https://via.placeholder.com/800x400?text=Изображение+4" alt="Изображение 4">
-            <p>Описание 4</p>
-        </div>
+    <!-- Пагинация -->
+    <div class="pagination">
+        <button class="btn" id="prev-page">Предыдущая</button>
+        <span id="page-number">1</span>
+        <button class="btn" id="next-page">Следующая</button>
     </div>
+
     <div class="footer">
         <div class="footer_nav">
             <ul class="footer_list">
@@ -127,23 +294,91 @@
             </ul>
             <ul class="footer_list_pic">
                 <li class="footer_item_pic">
-                     <img src="./img/footer/entypo-social_instagram-with-circle.png" alt="" class = header_cart_pic>
+                    <img src="./img/footer/entypo-social_instagram-with-circle.png" alt="" class="header_cart_pic">
                 </li>
                 <li class="footer_item_pic">
-                    <img src="./img/footer/entypo-social_vk-with-circle.png" alt="" class = header_cart_pic>
+                    <img src="./img/footer/entypo-social_vk-with-circle.png" alt="" class="header_cart_pic">
                 </li>
                 <li class="footer_item_pic">
-                    <img src="./img/footer/entypo-social_twitter-with-circle.png" alt="" class = header_cart_pic>
+                    <img src="./img/footer/entypo-social_twitter-with-circle.png" alt="" class="header_cart_pic">
                 </li>
                 <li class="footer_item_pic">
-                    <img src="./img/footer/entypo-social_facebook-with-circle.png" alt="" class = header_cart_pic>
+                    <img src="./img/footer/entypo-social_facebook-with-circle.png" alt="" class="header_cart_pic">
                 </li>
                 <li class="footer_item_pic">
-                    <img src="./img/footer/entypo-social_youtube-with-circle.png" alt="" >
+                    <img src="./img/footer/entypo-social_youtube-with-circle.png" alt="">
                 </li>
             </ul>
-
         </div>
     </div>
+
+    <!-- Подключение Materialize JS и jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        // Функция для добавления товара в корзину
+        function addToCart(product) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let existingItem = cart.find(item => item.id === product.id);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        // Обработчик событий для кнопок "Добавить в корзину"
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                let product = {
+                    id: this.closest('.product-item').dataset.id,
+                    name: this.closest('.product-item').dataset.name,
+                    price: parseFloat(this.closest('.product-item').dataset.price)
+                };
+                addToCart(product);
+            });
+        });
+
+        // Пагинация
+        const productsPerPage = 6;
+        let currentPage = 1;
+
+        function showProducts() {
+            const products = document.querySelectorAll('.product-item');
+            const start = (currentPage - 1) * productsPerPage;
+            const end = start + productsPerPage;
+
+            products.forEach((product, index) => {
+                if (index >= start && index < end) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+
+            document.getElementById('page-number').textContent = currentPage;
+        }
+
+        document.getElementById('prev-page').addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                showProducts();
+            }
+        });
+
+        document.getElementById('next-page').addEventListener('click', () => {
+            const products = document.querySelectorAll('.product-item');
+            if (currentPage < Math.ceil(products.length / productsPerPage)) {
+                currentPage++;
+                showProducts();
+            }
+        });
+
+        // Инициализация пагинации
+        showProducts();
+    </script>
 </body>
 </html>
