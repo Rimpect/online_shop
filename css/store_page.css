@@ -104,3 +104,33 @@ body {
 .pagination{
     align-items: center;
 }
+.product-item {
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.product-item .preview {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.product-item:hover .preview {
+    display: block;
+}
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+.product-price {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}

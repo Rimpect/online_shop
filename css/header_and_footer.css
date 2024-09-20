@@ -16,8 +16,8 @@
     padding-left: 100px;
     padding-right: 100px;
     display: flex;
-    align-items: center; /* Выравнивание по вертикали */
-    justify-content: flex-start; /* Выравнивание по горизонтали слева */
+    align-items: center; 
+    justify-content: flex-start; 
     font-size: 24px;
     font-weight: bold;
     align-self: flex-start;
@@ -41,21 +41,21 @@
     font-size: 20px;
     color: #FFFFFF;
     line-height: 24px;
-    font-family: 'Times New Roman', Times, serif;/* изменить на roboto*/
+    font-family: 'Times New Roman', Times, serif;
 }
 .header_logo_link{
     font-size: 50px;
     color: #FFFFFF;
     line-height: 24px;
-    font-family: 'Times New Roman', Times, serif;/* изменить на roboto*/
+    font-family: 'Times New Roman', Times, serif;
 }
 
 a {
     text-decoration: none;
 }
 ul {
-    list-style-type: none; /* Убирает маркеры */
-    padding-left: 0; /* Убирает отступ слева */
+    list-style-type: none; 
+    padding-left: 0; 
 }
 .footer_wrapper{
     display:flex;
@@ -72,12 +72,12 @@ ul {
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
-    padding-top:30px ; /* делает отступ сверху  для 5 картинок*/
+    padding-top:30px ; 
 }
 .footer_item_pic{
     display:flex;
     flex-wrap: wrap;
-    margin-right: 80px;/* делает отступ справа в 80px   для 5 картинок по пикселям надо будет везде править!!!!!!!*/
+    margin-right: 80px;
 }
 .footer_nav{
     display:flex;
@@ -87,7 +87,7 @@ ul {
     padding-right: 100px;
 }
 @font-face {
-    font-family: 'MyCustomFont_Roboto'; /* Название шрифта, которое вы будете использовать в CSS */
+    font-family: 'MyCustomFont_Roboto'; 
     src: url('/fonts/Roboto-Italic.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
@@ -96,5 +96,5 @@ ul {
     font-size: 38px;
     color: #000000;
     line-height: 24px;
-    font-family: 'Times New Roman', Times, serif;/* изменить на roboto*/
+    font-family: 'Times New Roman', Times, serif;
 }

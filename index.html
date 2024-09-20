@@ -89,28 +89,9 @@
             </div>
         </div>
     </div>
-
-    <!-- Подключение Materialize JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.carousel');
-            var instances = M.Carousel.init(elems, {
-                fullWidth: true,
-                indicators: true,
-                numVisible: 3
-            });
-
-            var carousel = instances[0];
-
-            document.getElementById('prevBtn').addEventListener('click', function() {
-                carousel.prev();
-            });
-
-            document.getElementById('nextBtn').addEventListener('click', function() {
-                carousel.next();
-            });
-        });
+    <script src="/js/page1.js">
+    
     </script>
 
         <div class="footer">

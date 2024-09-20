@@ -6,40 +6,7 @@
     <title>Страница товаров</title>
     <link rel="stylesheet" href="/css/header_and_footer.css">
     <link rel="stylesheet" href="/css/store_page.css">
-    <!-- Подключение Materialize CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
-    <style>
-        .product-item {
-            position: relative;
-            cursor: pointer;
-            margin-bottom: 20px;
-        }
-        .product-item .preview {
-            display: none;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 200px;
-            background: white;
-            border: 1px solid #ccc;
-            padding: 10px;
-            z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .product-item:hover .preview {
-            display: block;
-        }
-        .pagination {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .product-price {
-            text-align: center;
-            margin-top: 10px;
-            font-weight: bold;
-        }
-    </style>
 </head>
 <body>
     <div class="header">
@@ -73,7 +40,7 @@
         </div>
     </div>
 
-    <!-- Хлебные крошки -->
+  
     <div class="breadcrumbs" aria-label="Breadcrumb">
         <div class="wrapper">
             <ol>
@@ -85,7 +52,7 @@
         </div>
     </div>
 
-    <!-- Список категорий слева -->
+   
     <div class="categories">
         <ul>
             <li><a href="#!">Категория 1</a></li>
@@ -96,7 +63,7 @@
         </ul>
     </div>
 
-    <!-- Ряды картинок с товарами справа -->
+   
     <div class="products">
         <div class="product-item" data-id="1" data-name="Товар 1" data-price="10" data-color="Черный" data-size="S">
             <a href="/product.html?id=1">
@@ -256,7 +223,6 @@
         </div>
     </div>
 
-    <!-- Пагинация -->
     <div class="pagination">
         <button class="btn" id="prev-page">Предыдущая</button>
         <span id="page-number">1</span>
@@ -312,73 +278,10 @@
         </div>
     </div>
 
-    <!-- Подключение Materialize JS и jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-        // Функция для добавления товара в корзину
-        function addToCart(product) {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            let existingItem = cart.find(item => item.id === product.id);
-
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({ ...product, quantity: 1 });
-            }
-
-            localStorage.setItem('cart', JSON.stringify(cart));
-        }
-
-        // Обработчик событий для кнопок "Добавить в корзину"
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', function() {
-                let product = {
-                    id: this.closest('.product-item').dataset.id,
-                    name: this.closest('.product-item').dataset.name,
-                    price: parseFloat(this.closest('.product-item').dataset.price)
-                };
-                addToCart(product);
-            });
-        });
-
-        // Пагинация
-        const productsPerPage = 6;
-        let currentPage = 1;
-
-        function showProducts() {
-            const products = document.querySelectorAll('.product-item');
-            const start = (currentPage - 1) * productsPerPage;
-            const end = start + productsPerPage;
-
-            products.forEach((product, index) => {
-                if (index >= start && index < end) {
-                    product.style.display = 'block';
-                } else {
-                    product.style.display = 'none';
-                }
-            });
-
-            document.getElementById('page-number').textContent = currentPage;
-        }
-
-        document.getElementById('prev-page').addEventListener('click', () => {
-            if (currentPage > 1) {
-                currentPage--;
-                showProducts();
-            }
-        });
-
-        document.getElementById('next-page').addEventListener('click', () => {
-            const products = document.querySelectorAll('.product-item');
-            if (currentPage < Math.ceil(products.length / productsPerPage)) {
-                currentPage++;
-                showProducts();
-            }
-        });
-
-        // Инициализация пагинации
-        showProducts();
+    <script src="/js/store.js">
+        
     </script>
 </body>
 </html>
