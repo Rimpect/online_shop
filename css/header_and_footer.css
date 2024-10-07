@@ -9,7 +9,8 @@
     height: 100%; /* подправить потом */
     background-color: #1D1A1A; 
     color: #FFFFFF;
-    
+    margin-top: 20px; /* Добавьте отступ сверху */
+
 }
 
 .header_logo{

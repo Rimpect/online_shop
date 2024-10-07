@@ -37,17 +37,17 @@ body {
     padding: 40px;
     text-align: center;
     margin: 20px 0;
-    height: 50vh;
+    height: 70vh;
 }
+
 .rectangle {
     display: flex;
     flex-direction: column;
     background-color: #474747;
     color: #000000;
-  
     text-align: center;
     width: 48%;
-    height: 70vh;
+    height: 80vh;
     margin: 30px;
 }
 
@@ -62,10 +62,17 @@ body {
 
 .right-part {
     flex: 0 0 65%; 
-    background-color: #474747;
+    /*background-color: #474747;*/
     color: rgb(255, 255, 255);
-    padding: 20px;
+    max-width: 100%; /* Максимальная ширина контейнера */
+    max-height: 100%; /* Максимальная высота контейнера */
+    overflow: hidden; /* Скрывает часть изображения, которая выходит за пределы контейнера */
     
+}
+.rectangle img {
+    max-width: 100%; /* Максимальная ширина изображения */
+    max-height: 100%; /* Максимальная высота изображения */
+    object-fit: cover; /* Масштабирует изображение, чтобы заполнить контейнер, сохраняя пропорции */
 }
 .top-part {
     flex: 0 0 20%; 
@@ -74,12 +81,18 @@ body {
     font-size: 36px;
     font-family: 'Times New Roman', Times, serif; /* поменять на roboto */
     border: 2px solid rgb(0, 0, 0);
+   
 }
 .low-part {
-    flex: 0 0 80%; 
-    background-color: #2196F3;
-    color: rgb(0, 0, 0);
+    max-width: 100%; /* Максимальная ширина контейнера */
+    max-height: 100%; /* Максимальная высота контейнера */
+    overflow: hidden; /* Скрывает часть изображения, которая выходит за пределы контейнера */
     
+}
+.low-part img {
+    max-width: 100%; /* Максимальная ширина изображения */
+    max-height: 100%; /* Максимальная высота изображения */
+    object-fit: cover; /* Масштабирует изображение, чтобы заполнить контейнер, сохраняя пропорции */
 }
 .overlapping-element {
     position: absolute;
