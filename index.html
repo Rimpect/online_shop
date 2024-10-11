@@ -3,84 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Магазин одежды</title>
     <link rel="icon" type="image/x-icon" href="/img/icon/free-icon-shopping-bag-7529514.png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/1page.css">
     <link rel="stylesheet" href="/css/header_and_footer.css">
-    
 </head>
 
 <body>
-        <div class="header">
-            <div class="wrapper">
-                <div class="header_wrapper">
-                    <div class = header_logo> 
-                        <a href="/index.html" class="logo">
-                            <span class="letter">L</span>
-                            <span class="letter">O</span>
-                            <span class="letter">G</span>
-                            <span class="letter">O</span>
+    <div class="header">
+        <div class="wrapper">
+            <div class="header_wrapper">
+                <div class="header_logo"> 
+                    <a href="/index.html" class="logo">
+                        <span class="letter">L</span>
+                        <span class="letter">O</span>
+                        <span class="letter">G</span>
+                        <span class="letter">O</span>
+                    </a>
+                </div>
+                <ul class="header_list">
+                    <li class="header_item">
+                        <a href="#!" class="header_link">НОВОСТИ</a>
+                    </li>
+                    <li class="header_item">
+                        <a href="#!" class="header_link"> О НАС</a>
+                    </li>
+                    <li class="header_item">
+                        <a href="#!" class="header_link">НОВИНКИ</a>
+                    </li>
+                    <li class="header_item">
+                        <a href="#!" class="header_link">КОНТАКТЫ</a>
+                    </li>
+                    <li class="header_item">
+                        <a href="/shoping_card.html" class="header_link">
+                            <img src="./img/header/shopping_cart.svg" alt="" class="header_cart_pic">
                         </a>
-                    </div>
-                  
-                        <ul class="header_list">
-                            <li class="header_item">
-                                <a href="#!" class="header_link">НОВОСТИ</a>
-                            </li>
-                            <li class="header_item">
-                                <a href="#!" class="header_link"> О НАС</a>
-                            </li>
-                            <li class="header_item">
-                                <a href="#!" class="header_link">НОВИНКИ</a>
-                            </li>
-                            <li class="header_item">
-                                <a href="#!" class="header_link">КОНТАКТЫ</a>
-                            </li>
-                            <li class="header_item">
-                                <a href="/shoping_card.html" class="header_link">
-                                    <img src="./img/header/shopping_cart.svg" alt="" class = header_cart_pic>
-                                </a>
-                            </li>
-                        </ul>
-                    
-                </div>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="rectangle-1">
-            <div class="left-part">
-                Левая часть
-                <div class="overlapping-element">
-                    <div class="big_word">СТИЛЬНАЯ МУЖСКАЯ И ЖЕНСКАЯ ОДЕЖДА</div>
-                    <a href="#" class="custom-button">СМОТРЕТЬ КАТАЛОГ</a>
-                </div>  
-            </div>
-            <div class="right-part">
-                  <!-- <img src="/img/index/94494f835444e2943e0e576f18c0bc3b.jpg"> (что то с этим сделать(отображается 
-                   как надо но выглядит не очень)))-->
-            </div>
+    </div>
+    <div class="rectangle-1">
+        <div class="left-part">
+            Левая часть
+            <div class="overlapping-element">
+                <div class="big_word">СТИЛЬНАЯ МУЖСКАЯ И ЖЕНСКАЯ ОДЕЖДА</div>
+                <a href="#" class="custom-button">СМОТРЕТЬ КАТАЛОГ</a>
+            </div>  
         </div>
+        <div class="right-part">
+            <!-- <img src="/img/index/94494f835444e2943e0e576f18c0bc3b.jpg"> (что то с этим сделать(отображается 
+            как надо но выглядит не очень)))-->
+        </div>
+    </div>
 
-        <div class="rectangles-container">
-            <div class="rectangle">
-                <div class="low-part">
-                    <img src="/img/index/131607280299.jpg"><!-- (что то с этим сделать(отображается 
-                    как надо но выглядит не очень)))-->
-                </div>
-                <div class="top-part">
-                    <a href="/store.html" class="link_">МУЖСКИЕ ОДЕЖДЫ</a>
-                </div>
+    <div class="rectangles-container">
+        <div class="rectangle">
+            <div class="low-part">
+                <img src="/img/index/131607280299.jpg"><!-- (что то с этим сделать(отображается 
+                как надо но выглядит не очень)))-->
             </div>
-            <div class="rectangle">
-                <div class="top-part">
-                    <a href="/store.html" class="link_">ЖЕНСКИЕ ОДЕЖДЫ</a>
-                </div>
-                <div class="low-part">
-                    <img src="/img/index/131783030299.jpg"><!-- (что то с этим сделать(отображается 
-                    как надо но выглядит не очень)))-->
-                </div>
+            <div class="top-part">
+                <a href="/store.html?category=men" class="link_">МУЖСКИЕ ОДЕЖДЫ</a>
             </div>
         </div>
+        <div class="rectangle">
+            <div class="top-part">
+                <a href="/store.html?category=women" class="link_">ЖЕНСКИЕ ОДЕЖДЫ</a>
+            </div>
+            <div class="low-part">
+                <img src="/img/index/131783030299.jpg"><!-- (что то с этим сделать(отображается 
+                как надо но выглядит не очень)))-->
+            </div>
+        </div>
+    </div>
 
     <div class="container mt-5">
         <div class="carousel-container">
@@ -101,51 +98,49 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="/js/page1.js"></script>
     <button id="scrollToTopBtn" class="scroll-to-top">↑</button>
-    <script src ="/js/scroll_to_top.js"></script>
-  
+    <script src="/js/scroll_to_top.js"></script>
 
-
-        <div class="footer">
-            <div class="footer_nav">
-                <ul class="footer_list">
-                    <li class="footer_item">
-                        Пн-Вс 10:00-19:00
-                    </li>
-                    <li class="footer_item">
-                        +(996)703-717-108
-                    </li>
-                </ul>
-                <ul class="footer_list">
-                    <li class="footer_item">
-                        Мужчинам
-                    </li>
-                    <li class="footer_item">
-                        Женщинам
-                    </li>
-                    <li class="footer_item">
-                        Новинки
-                    </li>
-                </ul>
-                <ul class="footer_list">
-                    <li class="footer_item">
-                        Оплата
-                    </li>
-                    <li class="footer_item">
-                        Доставка
-                    </li>
-                </ul>
-                <ul class="footer_list_pic">
-                    <li class="footer_item_pic">
-                        <img src="./img/footer/entypo-social_vk-with-circle.png" alt="" class = header_cart_pic>
-                    </li>
-                    <li class="footer_item_pic">
-                        <img src="./img/footer/entypo-social_twitter-with-circle.png" alt="" class = header_cart_pic>
-                    </li>
-                    <li class="footer_item_pic">
-                        <img src="./img/footer/entypo-social_youtube-with-circle.png" alt="" >
-                    </li>
-                </ul>
-            </div>
+    <div class="footer">
+        <div class="footer_nav">
+            <ul class="footer_list">
+                <li class="footer_item">
+                    Пн-Вс 10:00-19:00
+                </li>
+                <li class="footer_item">
+                    +(996)703-717-108
+                </li>
+            </ul>
+            <ul class="footer_list">
+                <li class="footer_item">
+                    Мужчинам
+                </li>
+                <li class="footer_item">
+                    Женщинам
+                </li>
+                <li class="footer_item">
+                    Новинки
+                </li>
+            </ul>
+            <ul class="footer_list">
+                <li class="footer_item">
+                    Оплата
+                </li>
+                <li class="footer_item">
+                    Доставка
+                </li>
+            </ul>
+            <ul class="footer_list_pic">
+                <li class="footer_item_pic">
+                    <img src="./img/footer/entypo-social_vk-with-circle.png" alt="" class="header_cart_pic">
+                </li>
+                <li class="footer_item_pic">
+                    <img src="./img/footer/entypo-social_twitter-with-circle.png" alt="" class="header_cart_pic">
+                </li>
+                <li class="footer_item_pic">
+                    <img src="./img/footer/entypo-social_youtube-with-circle.png" alt="">
+                </li>
+            </ul>
         </div>
+    </div>
 </body>
 </html>
