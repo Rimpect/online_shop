@@ -62,7 +62,7 @@ body {
 
 .right-part {
     flex: 0 0 65%; 
-    /*background-color: #474747;*/
+    background-color: #474747;
     color: rgb(255, 255, 255);
     max-width: 100%; /* Максимальная ширина контейнера */
     max-height: 100%; /* Максимальная высота контейнера */

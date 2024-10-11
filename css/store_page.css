@@ -66,19 +66,16 @@ body {
 }
 
 /* Стили для товаров */
-.products {
-    width: 75%;
-    float: left;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
 .product-item {
-    width: calc(33.33% - 20px);
-    text-align: center;
+    display: none; /* Скрываем все товары по умолчанию */
+    float: left; /* Размещаем товары в строках */
+    box-sizing: border-box; /* Учитываем padding и border в ширине */
+    padding: 10px; /* Добавляем отступы между товарами */
 }
 
+.products {
+    overflow: hidden; /* Очищаем float */
+}
 .product-item img {
     width: 100%;
     height: auto;
@@ -133,4 +130,54 @@ body {
     text-align: center;
     margin-top: 10px;
     font-weight: bold;
+}
+
+
+/* Грид контейнер */
+.grid-container {
+    display: grid;
+    grid-template-columns: 20% 80%; /* Два столбца: 20% и 80% */
+    gap: 20px; /* Отступ между блоками */
+}
+
+/* Левый блок */
+.left-block {
+    background-color: #f4f4f4; /* Цвет фона для наглядности */
+    padding: 20px;
+}
+
+/* Правый блок */
+.right-block {
+    padding: 20px;
+}
+
+/* Выравнивание кнопки вправо */
+.products-header {
+    text-align: right; /* Выравниваем содержимое по правому краю */
+    margin-bottom: 20px; /* Добавляем отступ снизу */
+}
+
+.products-header .btn {
+    margin-right: 0; /* Убираем отступ справа */
+}
+
+/* Стили для товаров */
+.product-item {
+    display: none; /* Скрываем все товары по умолчанию */
+    float: left; /* Размещаем товары в строках */
+    box-sizing: border-box; /* Учитываем padding и border в ширине */
+    padding: 10px; /* Добавляем отступы между товарами */
+}
+
+.products {
+    overflow: hidden; /* Очищаем float */
+}
+
+/* Другие стили */
+/* ... (ваши существующие стили) */
+.product-image {
+    width: 100%; /* Ширина изображения 100% от контейнера */
+    height: auto; /* Автоматическая высота, чтобы сохранить пропорции */
+    max-width: 300px; /* Максимальная ширина изображения */
+    max-height: 300px; /* Максимальная высота изображения */
 }
