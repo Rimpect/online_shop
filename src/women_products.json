@@ -5,7 +5,13 @@
         "price": 10,
         "color": "Черный",
         "size": "S",
-        "image": "/img/index/131783030299.jpg"
+        "image": "131783030299.jpg",
+        "image_top": "/img/index/131783030299.jpg",
+        "images": ["/img/index/131783030299.jpg", "/img/index/women_product_1.2.jpg", "/img/index/women_product_1.3.jpg"],
+        "relatedProducts": [
+            { "id": 2, "image": "/img/index/131783030299.jpg" },
+            { "id": 3, "image": "/img/index/131783030299.jpg" }
+        ]
     },
     {
         "id": 2,
@@ -13,6 +19,152 @@
         "price": 20,
         "color": "Белый",
         "size": "M",
-        "image": "/img/index/131783030299.jpg"
+        "image": "women_product_2.jpg",
+        "image_top": "/img/index/women_product_2.jpg",
+        "images": ["/img/index/women_product_2.jpg", "/img/index/women_product_2.2.jpg","/img/index/women_product_2.3.jpg"],
+        "relatedProducts": [
+            { "id": 1, "image": "131783030299.jpg" },
+            { "id": 3, "image": "131783030299.jpg" }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Женский товар 3",
+        "price": 15,
+        "color": "Красный",
+        "size": "L",
+        "image": "women_product_3.jpg",
+        "image_top": "/img/index/women_product_3.jpg",
+        "images": ["/img/index/women_product_3.jpg", "/img/index/women_product_3.2.jpg","/img/index/women_product_3.3.jpg"],
+        "relatedProducts": [
+            { "id": 1, "image": "131783030299.jpg" },
+            { "id": 2, "image": "131783030299.jpg" }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Женский товар 4",
+        "price": 25,
+        "color": "Синий",
+        "size": "S",
+        "image": "women_product_4.jpg",
+        "image_top": "/img/index/women_product_4.jpg",
+        "images": ["/img/index/women_product_4.jpg", "/img/index/women_product_4.2.jpg","/img/index/women_product_4.3.jpg"],
+        "relatedProducts": [
+            { "id": 5, "image": "131783030299.jpg" },
+            { "id": 6, "image": "131783030299.jpg" }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Женский товар 5",
+        "price": 30,
+        "color": "Зеленый",
+        "size": "M",
+        "image": "women_product_5.jpg",
+        "image_top": "/img/index/women_product_5.jpg",
+        "images": ["/img/index/women_product_5.jpg", "/img/index/women_product_5.2.jpg","/img/index/women_product_5.3.jpg"],
+        "relatedProducts": [
+            { "id": 4, "image": "131783030299.jpg" },
+            { "id": 6, "image": "131783030299.jpg" }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Женский товар 6",
+        "price": 35,
+        "color": "Желтый",
+        "size": "L",
+        "image": "131783030299.jpg",
+        "image_top": "/img/index/131783030299.jpg",
+        "images": ["/img/index/131783030299.jpg", "/img/index/women_product_1.2.jpg", "/img/index/women_product_1.3.jpg"],
+        "relatedProducts": [
+            { "id": 4, "image": "131783030299.jpg" },
+            { "id": 5, "image": "131783030299.jpg" }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Женский товар 7",
+        "price": 40,
+        "color": "Фиолетовый",
+        "size": "S",
+        "image": "131783030299.jpg",
+        "image_top": "/img/index/131783030299.jpg",
+        "images": ["/img/index/131783030299.jpg", "/img/index/women_product_1.2.jpg", "/img/index/women_product_1.3.jpg"],
+        "relatedProducts": [
+            { "id": 8, "image": "131783030299.jpg" },
+            { "id": 9, "image": "131783030299.jpg" }
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Женский товар 8",
+        "price": 45,
+        "color": "Розовый",
+        "size": "M",
+        "image": "131783030299.jpg",
+        "image_top": "/img/index/131783030299.jpg",
+        "images": ["/img/index/131783030299.jpg", "/img/index/women_product_1.2.jpg", "/img/index/women_product_1.3.jpg"],
+        "relatedProducts": [
+            { "id": 7, "image": "131783030299.jpg" },
+            { "id": 9, "image": "131783030299.jpg" }
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Женский товар 9",
+        "price": 50,
+        "color": "Оранжевый",
+        "size": "L",
+        "image": "131783030299.jpg",
+        "image_top": "/img/index/131783030299.jpg",
+        "images": ["/img/index/131783030299.jpg", "/img/index/women_product_1.2.jpg", "/img/index/women_product_1.3.jpg"],
+        "relatedProducts": [
+            { "id": 7, "image": "131783030299.jpg" },
+            { "id": 8, "image": "131783030299.jpg" }
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Женский товар 10",
+        "price": 55,
+        "color": "Серый",
+        "size": "S",
+        "image": "131783030299.jpg",
+        "image_top": "/img/index/131783030299.jpg",
+        "images": ["/img/index/131783030299.jpg", "/img/index/women_product_1.2.jpg", "/img/index/women_product_1.3.jpg"],
+        "relatedProducts": [
+            { "id": 11, "image": "131783030299.jpg" },
+            { "id": 12, "image": "131783030299.jpg" }
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Женский товар 11",
+        "price": 60,
+        "color": "Коричневый",
+        "size": "M",
+        "image": "131783030299.jpg",
+        "image_top": "/img/index/131783030299.jpg",
+        "images": ["/img/index/131783030299.jpg", "/img/index/women_product_1.2.jpg", "/img/index/women_product_1.3.jpg"],
+        "relatedProducts": [
+            { "id": 10, "image": "131783030299.jpg" },
+            { "id": 12, "image": "131783030299.jpg" }
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Женский товар 12",
+        "price": 65,
+        "color": "Голубой",
+        "size": "L",
+        "image": "131783030299.jpg",
+        "image_top": "/img/index/131783030299.jpg",
+        "images": ["/img/index/131783030299.jpg", "/img/index/women_product_1.2.jpg", "/img/index/women_product_1.3.jpg"],
+        "relatedProducts": [
+            { "id": 10, "image": "131783030299.jpg" },
+            { "id": 11, "image": "131783030299.jpg" }
+        ]
     }
 ]

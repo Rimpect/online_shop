@@ -44,11 +44,11 @@
     </div>
 
     <div class="grid-container">
-        <!-- Левый блок (20% ширины) -->
+       
         <div class="left-block">
             <div class="breadcrumbs" aria-label="Breadcrumb">
                 <div class="wrapper">
-                    <ol>
+                    <ol id="breadcrumbs-list">
                         <li><a href="/">Home</a></li>
                         <li><a href="/category">Category</a></li>
                         <li><a href="/category/subcategory">Subcategory</a></li>
@@ -58,201 +58,18 @@
             </div>
             <div class="categories">
                 <ul>
-                    <li><a href="#!">Категория 1</a></li>
-                    <li><a href="#!">Категория 2</a></li>
-                    <li><a href="#!">Категория 3</a></li>
-                    <li><a href="#!">Категория 4</a></li>
-                    <li><a href="#!">Категория 5</a></li>
+                    <li><a href="#!" data-category="men">Мужская одежда</a></li>
+                    <li><a href="#!" data-category="women">Женская одежда</a></li>
                 </ul>
             </div>
         </div>
 
-        <!-- Правый блок (80% ширины) -->
         <div class="right-block">
             <div class="products-header">
                 <button id="toggleColumnsBtn" class="btn right-align">Переключить колонки</button>
             </div>
-            <div class="row">
-                <div class="col s12 m6 l4">
-                    <div class="product-item" data-id="1" data-name="Товар 1" data-price="10" data-color="Черный" data-size="S">
-                        <a href="/product.html?id=1">
-                            <img src="/img/index/131783030299.jpg" alt="Товар 1">
-                        </a>
-                        <div class="preview">
-                            <h5>Товар 1</h5>
-                            <p>Цена: $10</p>
-                            <p>Цвет: Черный</p>
-                            <p>Размер: S</p>
-                            <button class="btn add-to-cart">Добавить в корзину</button>
-                        </div>
-                        <div class="product-price">$10</div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l4">
-                    <div class="product-item" data-id="2" data-name="Товар 2" data-price="20" data-color="Белый" data-size="M">
-                        <a href="/product.html?id=2">
-                            <img src="/img/index/131783030299.jpg" alt="Товар 2">
-                        </a>
-                        <div class="preview">
-                            <h5>Товар 2</h5>
-                            <p>Цена: $20</p>
-                            <p>Цвет: Белый</p>
-                            <p>Размер: M</p>
-                            <button class="btn add-to-cart">Добавить в корзину</button>
-                        </div>
-                        <div class="product-price">$20</div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l4">
-                    <div class="product-item" data-id="3" data-name="Товар 3" data-price="30" data-color="Синий" data-size="L">
-                        <a href="/product.html?id=3">
-                            <img src="/img/index/131783030299.jpg" alt="Товар 3">
-                        </a>
-                        <div class="preview">
-                            <h5>Товар 3</h5>
-                            <p>Цена: $30</p>
-                            <p>Цвет: Синий</p>
-                            <p>Размер: L</p>
-                            <button class="btn add-to-cart">Добавить в корзину</button>
-                        </div>
-                        <div class="product-price">$30</div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l4">
-                    <div class="product-item" data-id="4" data-name="Товар 4" data-price="40" data-color="Красный" data-size="XL">
-                        <a href="/product.html?id=4">
-                            <img src="/img/index/131783030299.jpg" alt="Товар 4">
-                        </a>
-                        <div class="preview">
-                            <h5>Товар 4</h5>
-                            <p>Цена: $40</p>
-                            <p>Цвет: Красный</p>
-                            <p>Размер: XL</p>
-                            <button class="btn add-to-cart">Добавить в корзину</button>
-                        </div>
-                        <div class="product-price">$40</div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l4">
-                    <div class="product-item" data-id="5" data-name="Товар 5" data-price="50" data-color="Зеленый" data-size="S">
-                        <a href="/product.html?id=5">
-                            <img src="/img/index/131783030299.jpg" alt="Товар 5">
-                        </a>
-                        <div class="preview">
-                            <h5>Товар 5</h5>
-                            <p>Цена: $50</p>
-                            <p>Цвет: Зеленый</p>
-                            <p>Размер: S</p>
-                            <button class="btn add-to-cart">Добавить в корзину</button>
-                        </div>
-                        <div class="product-price">$50</div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l4">
-                    <div class="product-item" data-id="6" data-name="Товар 6" data-price="60" data-color="Желтый" data-size="M">
-                        <a href="/product.html?id=6">
-                            <img src="/img/index/131783030299.jpg" alt="Товар 6">
-                        </a>
-                        <div class="preview">
-                            <h5>Товар 6</h5>
-                            <p>Цена: $60</p>
-                            <p>Цвет: Желтый</p>
-                            <p>Размер: M</p>
-                            <button class="btn add-to-cart">Добавить в корзину</button>
-                        </div>
-                        <div class="product-price">$60</div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l4">
-                    <div class="product-item" data-id="7" data-name="Товар 7" data-price="70" data-color="Черный" data-size="L">
-                        <a href="/product.html?id=7">
-                            <img src="/img/index/131783030299.jpg" alt="Товар 7">
-                        </a>
-                        <div class="preview">
-                            <h5>Товар 7</h5>
-                            <p>Цена: $70</p>
-                            <p>Цвет: Черный</p>
-                            <p>Размер: L</p>
-                            <button class="btn add-to-cart">Добавить в корзину</button>
-                        </div>
-                        <div class="product-price">$70</div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l4">
-                    <div class="product-item" data-id="8" data-name="Товар 8" data-price="80" data-color="Белый" data-size="XL">
-                        <a href="/product.html?id=8">
-                            <img src="/img/index/131783030299.jpg" alt="Товар 8">
-                        </a>
-                        <div class="preview">
-                            <h5>Товар 8</h5>
-                            <p>Цена: $80</p>
-                            <p>Цвет: Белый</p>
-                            <p>Размер: XL</p>
-                            <button class="btn add-to-cart">Добавить в корзину</button>
-                        </div>
-                        <div class="product-price">$80</div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l4">
-                    <div class="product-item" data-id="9" data-name="Товар 9" data-price="90" data-color="Синий" data-size="S">
-                        <a href="/product.html?id=9">
-                            <img src="/img/index/131783030299.jpg" alt="Товар 9">
-                        </a>
-                        <div class="preview">
-                            <h5>Товар 9</h5>
-                            <p>Цена: $90</p>
-                            <p>Цвет: Синий</p>
-                            <p>Размер: S</p>
-                            <button class="btn add-to-cart">Добавить в корзину</button>
-                        </div>
-                        <div class="product-price">$90</div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l4">
-                    <div class="product-item" data-id="10" data-name="Товар 10" data-price="100" data-color="Красный" data-size="M">
-                        <a href="/product.html?id=10">
-                            <img src="/img/index/131783030299.jpg" alt="Товар 10">
-                        </a>
-                        <div class="preview">
-                            <h5>Товар 10</h5>
-                            <p>Цена: $100</p>
-                            <p>Цвет: Красный</p>
-                            <p>Размер: M</p>
-                            <button class="btn add-to-cart">Добавить в корзину</button>
-                        </div>
-                        <div class="product-price">$100</div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l4">
-                    <div class="product-item" data-id="11" data-name="Товар 11" data-price="110" data-color="Зеленый" data-size="L">
-                        <a href="/product.html?id=11">
-                            <img src="/img/index/131783030299.jpg" alt="Товар 11">
-                        </a>
-                        <div class="preview">
-                            <h5>Товар 11</h5>
-                            <p>Цена: $110</p>
-                            <p>Цвет: Зеленый</p>
-                            <p>Размер: L</p>
-                            <button class="btn add-to-cart">Добавить в корзину</button>
-                        </div>
-                        <div class="product-price">$110</div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l4">
-                    <div class="product-item" data-id="12" data-name="Товар 12" data-price="120" data-color="Желтый" data-size="XL">
-                        <a href="/product.html?id=12">
-                            <img src="/img/index/131783030299.jpg" alt="Товар 12">
-                        </a>
-                        <div class="preview">
-                            <h5>Товар 12</h5>
-                            <p>Цена: $120</p>
-                            <p>Цвет: Желтый</p>
-                            <p>Размер: XL</p>
-                            <button class="btn add-to-cart">Добавить в корзину</button>
-                        </div>
-                        <div class="product-price">$120</div>
-                    </div>
-                </div>
+            <div class="row" id="products-container">
+            
             </div>
             <div class="pagination">
                 <button class="btn" id="prev-page">Предыдущая</button>

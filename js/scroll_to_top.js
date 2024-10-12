@@ -17,5 +17,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 document.querySelector('.scroll-to-top').addEventListener('click', function() {
-    this.style.backgroundColor = '#000000'; // Убедитесь, что цвет остается черным
+    this.style.backgroundColor = '#000000'; 
 });

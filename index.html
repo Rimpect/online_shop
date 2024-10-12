@@ -7,6 +7,7 @@
     <link rel="icon" type="image/x-icon" href="/img/icon/free-icon-shopping-bag-7529514.png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/1page.css">
+    <link rel="stylesheet" href="/css/chatbot.css">
     <link rel="stylesheet" href="/css/header_and_footer.css">
 </head>
 
@@ -44,7 +45,7 @@
             </div>
         </div>
     </div>
-    <div class="rectangle-1">
+   <!-- <div class="rectangle-1">
         <div class="left-part">
             Левая часть
             <div class="overlapping-element">
@@ -53,10 +54,10 @@
             </div>  
         </div>
         <div class="right-part">
-            <!-- <img src="/img/index/94494f835444e2943e0e576f18c0bc3b.jpg"> (что то с этим сделать(отображается 
-            как надо но выглядит не очень)))-->
+          <img src="/img/index/94494f835444e2943e0e576f18c0bc3b.jpg"> (что то с этим сделать(отображается 
+            как надо но выглядит не очень)))
         </div>
-    </div>
+    </div>-->
 
     <div class="rectangles-container">
         <div class="rectangle">
@@ -142,5 +143,16 @@
             </ul>
         </div>
     </div>
+
+    <button id="chatbot-toggle">💬</button>
+    <div id="chatbot-container">
+        <div id="chatbot-header">
+            <span>Чат-бот</span>
+            <button id="chatbot-close">×</button>
+        </div>
+        <div id="chatbot-messages"></div>
+        <input type="text" id="chatbot-input" placeholder="Введите сообщение...">
+    </div>
+    <script src="/js/bot.js"></script>
 </body>
 </html>

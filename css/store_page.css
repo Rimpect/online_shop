@@ -181,3 +181,13 @@ body {
     max-width: 300px; /* Максимальная ширина изображения */
     max-height: 300px; /* Максимальная высота изображения */
 }
+.product-item {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+.product-item img {
+    width: 100%; /* Изображение займет всю ширину контейнера */
+    height: auto; /* Автоматическая высота, чтобы сохранить пропорции */
+    display: block; /* Убираем лишние отступы */
+}

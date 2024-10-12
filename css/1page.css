@@ -64,15 +64,15 @@ body {
     flex: 0 0 65%; 
     background-color: #474747;
     color: rgb(255, 255, 255);
-    max-width: 100%; /* Максимальная ширина контейнера */
-    max-height: 100%; /* Максимальная высота контейнера */
-    overflow: hidden; /* Скрывает часть изображения, которая выходит за пределы контейнера */
+    max-width: 100%; 
+    max-height: 100%; 
+    overflow: hidden;
     
 }
 .rectangle img {
-    max-width: 100%; /* Максимальная ширина изображения */
-    max-height: 100%; /* Максимальная высота изображения */
-    object-fit: cover; /* Масштабирует изображение, чтобы заполнить контейнер, сохраняя пропорции */
+    max-width: 100%; 
+    max-height: 100%; 
+    object-fit: cover; 
 }
 .top-part {
     flex: 0 0 20%; 
@@ -84,15 +84,15 @@ body {
    
 }
 .low-part {
-    max-width: 100%; /* Максимальная ширина контейнера */
-    max-height: 100%; /* Максимальная высота контейнера */
-    overflow: hidden; /* Скрывает часть изображения, которая выходит за пределы контейнера */
+    max-width: 100%; 
+    max-height: 100%; 
+    overflow: hidden; 
     
 }
 .low-part img {
-    max-width: 100%; /* Максимальная ширина изображения */
-    max-height: 100%; /* Максимальная высота изображения */
-    object-fit: cover; /* Масштабирует изображение, чтобы заполнить контейнер, сохраняя пропорции */
+    max-width: 100%; 
+    max-height: 100%; 
+    object-fit: cover; 
 }
 .overlapping-element {
     position: absolute;
@@ -153,7 +153,7 @@ body {
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 1px;
     font-size: 36px;
 }
 

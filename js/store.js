@@ -1,24 +1,74 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let productsPerPage = 6; // Количество товаров на странице
-    let currentPage = 1; // Текущая страница
-    let columns = 3; // Количество товаров в строке
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get('category') || 'women'; 
+    const productId = urlParams.get('productId'); 
+    let productsPerPage = 6; 
+    let currentPage = 1; 
+    let columns = 3; 
+    let products = [];
+    let totalPages = 0;
 
-    const products = document.querySelectorAll('.product-item');
-    let totalPages = Math.ceil(products.length / productsPerPage);
+    function loadProducts(category) {
+        const jsonFile = category === 'men' ? 'men_products.json' : 'women_products.json';
+        $.ajax({
+            url: `src/${jsonFile}`, 
+            method: 'GET',
+            success: function(data) {
+                products = data;
+                totalPages = Math.ceil(products.length / productsPerPage);
+                showPage(currentPage);
+                updatePaginationButtons();
+                updateBreadcrumbs(category, productId); 
+            },
+            error: function(error) {
+                console.error('Ошибка загрузки данных:', error);
+            }
+        });
+    }
 
     function showPage(page) {
         const start = (page - 1) * productsPerPage;
         const end = start + productsPerPage;
 
-        products.forEach((product, index) => {
-            if (index >= start && index < end) {
-                product.style.display = 'block';
-            } else {
-                product.style.display = 'none';
+        const productsContainer = document.getElementById('products-container');
+        productsContainer.innerHTML = '';
+
+        for (let i = start; i < end; i++) {
+            if (i < products.length) {
+                const product = products[i];
+                const col = document.createElement('div');
+                col.className = `col ${columns === 3 ? 's12 m6 l4' : 's12 m6 l3'}`;
+                col.innerHTML = `
+                    <div class="product-item" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-color="${product.color}" data-size="${product.size}">
+                        <a href="/product.html?id=${product.id}&category=${category}">
+                            <img src="img/index/${product.image}" alt="${product.name}">
+                        </a>
+                        <div class="preview">
+                            <h5>${product.name}</h5>
+                            <p>Цена: $${product.price}</p>
+                            <p>Цвет: ${product.color}</p>
+                            <p>Размер: ${product.size}</p>
+                            <button class="btn add-to-cart" data-id="${product.id}">Добавить в корзину</button>
+                        </div>
+                        <div class="product-price">$${product.price}</div>
+                    </div>
+                `;
+                productsContainer.appendChild(col);
             }
-        });
+        }
 
         document.getElementById('page-number').textContent = page;
+
+        // Добавляем обработчик событий для кнопки "Добавить в корзину"
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const productId = this.getAttribute('data-id');
+                const product = products.find(p => p.id == productId);
+                if (product) {
+                    addToCart(product);
+                }
+            });
+        });
     }
 
     function updatePaginationButtons() {
@@ -68,19 +118,25 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        // Если товаров недостаточно, добавляем товары со следующих страниц
-        let nextPageStart = end;
-        while (productCount < productsPerPage && nextPageStart < products.length) {
-            productsToShow.push(products[nextPageStart]);
-            productCount++;
-            nextPageStart++;
-        }
-
         // Отображаем товары
         productsToShow.forEach(product => {
             const col = document.createElement('div');
             col.className = `col ${columns === 3 ? 's12 m6 l4' : 's12 m6 l3'}`;
-            col.appendChild(product.cloneNode(true));
+            col.innerHTML = `
+                <div class="product-item" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-color="${product.color}" data-size="${product.size}">
+                    <a href="/product.html?id=${product.id}&category=${category}">
+                        <img src="img/index/${product.image}" alt="${product.name}">
+                    </a>
+                    <div class="preview">
+                        <h5>${product.name}</h5>
+                        <p>Цена: $${product.price}</p>
+                        <p>Цвет: ${product.color}</p>
+                        <p>Размер: ${product.size}</p>
+                        <button class="btn add-to-cart" data-id="${product.id}">Добавить в корзину</button>
+                    </div>
+                    <div class="product-price">$${product.price}</div>
+                </div>
+            `;
             container.appendChild(col);
         });
 
@@ -92,37 +148,95 @@ document.addEventListener('DOMContentLoaded', function() {
             container.appendChild(col);
             productCount++;
         }
+
+        // Добавляем обработчик событий для кнопки "Добавить в корзину"
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const productId = this.getAttribute('data-id');
+                const product = products.find(p => p.id == productId);
+                if (product) {
+                    addToCart(product);
+                }
+            });
+        });
     }
 
-    document.getElementById('prev-page').addEventListener('click', function() {
-        if (currentPage > 1) {
-            currentPage--;
-            showPage(currentPage);
+    function updateBreadcrumbs(category, productId) {
+        const breadcrumbsList = document.getElementById('breadcrumbs-list');
+        breadcrumbsList.innerHTML = ''; // Очищаем текущие хлебные крошки
+
+        // Добавляем "Home"
+        const homeLi = document.createElement('li');
+        homeLi.innerHTML = '<a href="/">Home</a>';
+        breadcrumbsList.appendChild(homeLi);
+
+        // Добавляем категорию
+        const categoryLi = document.createElement('li');
+        categoryLi.innerHTML = `<a href="/store.html?category=${category}">${category === 'men' ? 'Мужская одежда' : 'Женская одежда'}</a>`;
+        breadcrumbsList.appendChild(categoryLi);
+
+        // Если есть ID товара, добавляем товар
+        if (productId) {
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                const productLi = document.createElement('li');
+                productLi.setAttribute('aria-current', 'page');
+                productLi.textContent = product.name;
+                breadcrumbsList.appendChild(productLi);
+            }
+        }
+    }
+
+    function addToCart(product) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let existingItem = cart.find(item => item.id === product.id);
+
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push({ ...product, quantity: 1 });
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert('Товар добавлен в корзину'); // Уведомление о добавлении в корзину
+    }
+
+    const prevButton = document.getElementById('prev-page');
+    const nextButton = document.getElementById('next-page');
+    const toggleColumnsBtn = document.getElementById('toggleColumnsBtn');
+
+    if (prevButton) {
+        prevButton.addEventListener('click', function() {
+            if (currentPage > 1) {
+                currentPage--;
+                showPage(currentPage);
+                updatePaginationButtons();
+                redistributeProducts();
+            }
+        });
+    }
+
+    if (nextButton) {
+        nextButton.addEventListener('click', function() {
+            if (currentPage < totalPages) {
+                currentPage++;
+                showPage(currentPage);
+                updatePaginationButtons();
+                redistributeProducts();
+            }
+        });
+    }
+
+    if (toggleColumnsBtn) {
+        toggleColumnsBtn.addEventListener('click', function() {
+            columns = columns === 3 ? 4 : 3;
+            updateColumns();
+            showPage(1); // При смене колонок переключается на первую страницу
             updatePaginationButtons();
             redistributeProducts();
-        }
-    });
-
-    document.getElementById('next-page').addEventListener('click', function() {
-        if (currentPage < totalPages) {
-            currentPage++;
-            showPage(currentPage);
-            updatePaginationButtons();
-            redistributeProducts();
-        }
-    });
-
-    document.getElementById('toggleColumnsBtn').addEventListener('click', function() {
-        columns = columns === 3 ? 4 : 3;
-        updateColumns();
-        showPage(1); // При смене колонок переключаемся на первую страницу
-        updatePaginationButtons();
-        redistributeProducts();
-    });
+        });
+    }
 
     // Инициализация отображения первой страницы
-    showPage(currentPage);
-    updatePaginationButtons();
-    updateColumns();
-    redistributeProducts();
+    loadProducts(category);
 });
