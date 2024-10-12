@@ -1,0 +1,17 @@
+.cart-item-image {
+    width: 100px; /* Установите нужную ширину */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    margin-right: 10px; /* Отступ справа для разделения изображения и текста */
+}
+#clear-cart {
+    background-color: black; /* Черный фон */
+    color: white; /* Белый текст */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    border: none; /* Убираем границу */
+    cursor: pointer; /* Курсор в виде руки при наведении */
+    border-radius: 5px; /* Закругленные углы */
+}
+
+#clear-cart:hover {
+    background-color: #333; /* Темно-серый фон при наведении */
+}
