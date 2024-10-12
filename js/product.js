@@ -24,7 +24,29 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         localStorage.setItem('cart', JSON.stringify(cart));
-        alert('Товар добавлен в корзину');
+        showModal(); // Показать модальное окно
+    }
+
+    function showModal() {
+        var modal = document.getElementById('modal');
+        if (modal) {
+            modal.style.display = 'block';
+
+            var span = document.getElementsByClassName('close')[0];
+            if (span) {
+                span.onclick = function() {
+                    modal.style.display = 'none';
+                }
+            }
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            }
+        } else {
+            console.error('Модальное окно не найдено');
+        }
     }
 
     function loadProductData(productId, category) {
@@ -42,34 +64,47 @@ document.addEventListener('DOMContentLoaded', function() {
                     document.getElementById('mainImage').src = product.image_top; 
 
                     let thumbnails = document.getElementById('thumbnails');
-                    thumbnails.innerHTML = '';
-                    product.images.forEach(image => {
-                        let img = document.createElement('img');
-                        img.src = image;
-                        img.alt = `Изображение ${product.images.indexOf(image) + 1}`;
-                        img.onmouseover = () => changeMainImage(img);
-                        img.onmouseout = resetMainImage;
-                        thumbnails.appendChild(img);
-                    });
+                    if (thumbnails) {
+                        thumbnails.innerHTML = '';
+                        product.images.forEach(image => {
+                            let img = document.createElement('img');
+                            img.src = image;
+                            img.alt = `Изображение ${product.images.indexOf(image) + 1}`;
+                            img.onmouseover = () => changeMainImage(img);
+                            img.onmouseout = resetMainImage;
+                            thumbnails.appendChild(img);
+                        });
+                    } else {
+                        console.error('Элемент для миниатюр не найден');
+                    }
 
                     let relatedProducts = document.getElementById('relatedProducts');
-                    relatedProducts.innerHTML = '';
-                    product.relatedProducts.forEach(relatedProduct => {
-                        let div = document.createElement('div');
-                        div.className = 'related-product';
-                        let img = document.createElement('img');
-                        img.src = relatedProduct.image;
-                        img.alt = `Товар ${relatedProduct.id}`;
-                        div.appendChild(img);
-                        let p = document.createElement('p');
-                        p.textContent = relatedProduct.name;
-                        div.appendChild(p);
-                        relatedProducts.appendChild(div);
-                    });
+                    if (relatedProducts) {
+                        relatedProducts.innerHTML = '';
+                        product.relatedProducts.forEach(relatedProduct => {
+                            let div = document.createElement('div');
+                            div.className = 'related-product';
+                            let img = document.createElement('img');
+                            img.src = relatedProduct.image;
+                            img.alt = `Товар ${relatedProduct.id}`;
+                            div.appendChild(img);
+                            let p = document.createElement('p');
+                            p.textContent = relatedProduct.name;
+                            div.appendChild(p);
+                            relatedProducts.appendChild(div);
+                        });
+                    } else {
+                        console.error('Элемент для связанных товаров не найден');
+                    }
 
-                    document.getElementById('addToCart').onclick = () => addToCart(product);
+                    // Убедитесь, что кнопка существует и имеет правильный ID
+                    let addToCartButton = document.getElementById('addToCart');
+                    if (addToCartButton) {
+                        addToCartButton.onclick = () => addToCart(product);
+                    } else {
+                        console.error('Кнопка "Добавить в корзину" не найдена');
+                    }
 
-                   
                     updateBreadcrumbs(product, category);
                 } else {
                     alert('Товар не найден');
@@ -77,26 +112,42 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch(error => console.error('Ошибка загрузки данных:', error));
     }
+    function addToCart(product) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let existingItem = cart.find(item => item.id === product.id);
 
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push({ ...product, quantity: 1 });
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert('Товар добавлен в корзину'); // Уведомление о добавлении в корзину
+    }
     function updateBreadcrumbs(product, category) {
         const breadcrumbsList = document.getElementById('breadcrumbs-list');
-        breadcrumbsList.innerHTML = ''; 
+        if (breadcrumbsList) {
+            breadcrumbsList.innerHTML = ''; 
 
-        // Добавляем "Home"
-        const homeLi = document.createElement('li');
-        homeLi.innerHTML = '<a href="/">Home</a>';
-        breadcrumbsList.appendChild(homeLi);
+            // Добавляем "Home"
+            const homeLi = document.createElement('li');
+            homeLi.innerHTML = '<a href="/">Home</a>';
+            breadcrumbsList.appendChild(homeLi);
 
-        // Добавляем категорию
-        const categoryLi = document.createElement('li');
-        categoryLi.innerHTML = `<a href="/store.html?category=${category}">${category === 'men' ? 'Мужская одежда' : 'Женская одежда'}</a>`;
-        breadcrumbsList.appendChild(categoryLi);
+            // Добавляем категорию
+            const categoryLi = document.createElement('li');
+            categoryLi.innerHTML = `<a href="/store.html?category=${category}">${category === 'men' ? 'Мужская одежда' : 'Женская одежда'}</a>`;
+            breadcrumbsList.appendChild(categoryLi);
 
-        // Добавляем товар
-        const productLi = document.createElement('li');
-        productLi.setAttribute('aria-current', 'page');
-        productLi.textContent = product.name;
-        breadcrumbsList.appendChild(productLi);
+            // Добавляем товар
+            const productLi = document.createElement('li');
+            productLi.setAttribute('aria-current', 'page');
+            productLi.textContent = product.name;
+            breadcrumbsList.appendChild(productLi);
+        } else {
+            console.error('Элемент для хлебных крошек не найден');
+        }
     }
 
     // Инициализация отображения товара
