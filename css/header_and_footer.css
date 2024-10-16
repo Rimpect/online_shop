@@ -4,15 +4,25 @@
     background-color: #1D1A1A; 
     color: #FFFFFF;
 }
-.footer { 
-    grid-area: 5 / 1 / 6 / 2; 
-    height: 100%; /* подправить потом */
-    background-color: #1D1A1A; 
+/* Общие стили для подвала */
+.footer {
+    background-color: #1D1A1A;
     color: #FFFFFF;
-    margin-top: 20px; 
-
+    margin-top: 20px;
+    z-index: 100; /* Чтобы подвал был поверх других элементов */
 }
 
+/* Стили для подвала на странице корзины */
+.cart-page .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Стили для контейнера корзины */
+.cart-page .cart-container {
+    padding-bottom: 100px; /* Добавляем отступ снизу, чтобы контент не перекрывался подвалом */
+}
 .header_logo{
     padding-left: 100px;
     padding-right: 100px;
@@ -185,3 +195,18 @@ body {
     font-weight: bold;
     text-decoration: none;
 }
+.cart__num {
+    position: absolute;
+    background-color: #d62240;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    top: -5px;
+    right: -5px;
+  }
