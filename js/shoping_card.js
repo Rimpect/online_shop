@@ -28,12 +28,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
         totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`; // Округляем общую стоимость до двух знаков после запятой
 
-        // Добавляем обработчики событий для кнопок "+" и "-"
+        // Добавляем обработчики событий для полей ввода количества
         document.querySelectorAll('.item-quantity').forEach(input => {
-            input.addEventListener('change', function() {
+            input.addEventListener('input', function() {
                 const productId = this.getAttribute('data-id');
                 const quantity = parseInt(this.value);
-                updateItemQuantity(productId, quantity);
+                if (!isNaN(quantity) && quantity >= 1) {
+                    updateItemQuantity(productId, quantity);
+                } else {
+                    this.value = 1; // Устанавливаем значение по умолчанию, если введено некорректное значение
+                }
             });
         });
 

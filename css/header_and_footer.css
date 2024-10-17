@@ -4,26 +4,30 @@
     background-color: #1D1A1A; 
     color: #FFFFFF;
 }
+
 /* Общие стили для подвала */
 .footer {
     background-color: #1D1A1A;
     color: #FFFFFF;
     margin-top: 20px;
     z-index: 100; /* Чтобы подвал был поверх других элементов */
+    padding: 20px 0; /* Добавлен отступ сверху и снизу */
 }
 
 /* Стили для подвала на странице корзины */
 .cart-page .footer {
-    position: fixed;
+    position: relative; /* Изменено с fixed на relative */
     bottom: 0;
     width: 100%;
+    padding: 20px 0; /* Добавлен отступ сверху и снизу */
 }
 
 /* Стили для контейнера корзины */
 .cart-page .cart-container {
     padding-bottom: 100px; /* Добавляем отступ снизу, чтобы контент не перекрывался подвалом */
 }
-.header_logo{
+
+.header_logo {
     padding-left: 100px;
     padding-right: 100px;
     display: flex;
@@ -34,26 +38,33 @@
     align-self: flex-start;
     margin-top: 10px;
 }
-.header_wrapper{
-    display:flex;
+
+.header_wrapper {
+    display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
     justify-content: space-between;
 }
-.header_list{
+
+.header_list {
     display: flex;
     flex-wrap: wrap;
-
+    list-style: none; /* Убираем маркеры у списка */
+    padding: 0; /* Убираем отступы у списка */
+    margin: 0; /* Убираем отступы у списка */
 }
-.header_item{
+
+.header_item {
     margin-right: 80px;
 }
-.header_link{
+
+.header_link {
     font-size: 20px;
     color: #FFFFFF;
     line-height: 24px;
     font-family: 'Times New Roman', Times, serif;
 }
+
 .logo {
     display: flex;
     font-size: 48px;
@@ -80,54 +91,103 @@
         transform: scale(1.2);
     }
 }
+
 a {
     text-decoration: none;
 }
+
 ul {
     list-style-type: none; 
     padding-left: 0; 
 }
-.footer_wrapper{
-    display:flex;
+
+.footer_wrapper {
+    display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
     justify-content: space-between;
 }
-.footer_list{
-    line-height: 50px ;
+
+.footer_list {
+    line-height: 50px;
+    list-style: none; /* Убираем маркеры у списка */
+    padding: 0; /* Убираем отступы у списка */
+    margin: 0; /* Убираем отступы у списка */
 }
-.footer_list_pic{
+
+.footer_list_pic {
     margin-right: 80px;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
-    padding-top:30px ; 
+    padding-top: 30px;
 }
-.footer_item_pic{
-    display:flex;
+
+.footer_item_pic {
+    display: flex;
     flex-wrap: wrap;
     margin-right: 80px;
 }
-.footer_nav{
-    display:flex;
+
+.footer_nav {
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding-left: 100px;
     padding-right: 100px;
 }
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    .footer_nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .footer_list {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer_list_pic {
+        justify-content: center;
+    }
+
+    .footer_item_pic {
+        margin: 0 20px 20px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer_nav {
+        padding: 0 10px;
+    }
+
+    .footer_list {
+        line-height: 30px;
+    }
+
+    .footer_item_pic {
+        margin: 0 10px 10px 0;
+    }
+}
+
 @font-face {
     font-family: 'MyCustomFont_Roboto'; 
     src: url('/fonts/Roboto-Italic.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
-.link_{
+
+.link_ {
     font-size: 38px;
     color: #000000;
     line-height: 24px;
     font-family: 'Times New Roman', Times, serif;
 }
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -140,6 +200,7 @@ body {
     max-width: 800px;
     margin: 0 auto;
 }
+
 .scroll-to-top {
     position: fixed;
     bottom: 20px;
@@ -159,6 +220,7 @@ body {
 .scroll-to-top.visible {
     opacity: 1;
 }
+
 .breadcrumbs {
     margin: 20px 0;
 }
@@ -195,18 +257,20 @@ body {
     font-weight: bold;
     text-decoration: none;
 }
-.cart__num {
+
+.cart-icon-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-count {
     position: absolute;
-    background-color: #d62240;
-    width: 30px;
-    height: 30px;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    color: white;
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 500;
-    top: -5px;
-    right: -5px;
-  }
+    padding: 4px 8px;
+    font-size: 12px;
+    line-height: 1;
+}

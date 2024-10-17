@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p>Цена: $${product.price}</p>
                             <p>Цвет: ${product.color}</p>
                             <p>Размер: ${product.size}</p>
-                            <button class="btn add-to-cart" data-id="${product.id}">Добавить в корзину</button>
+                            <button class="btn add-to-cart" data-id="${product.id}">Добавить</button>
                         </div>
                         <div class="product-price">$${product.price}</div>
                     </div>
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const productId = this.getAttribute('data-id');
                 const product = products.find(p => p.id == productId);
                 if (product) {
-                    addToCart(product);
+                    addToCart(product, this);
                 }
             });
         });
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <p>Цена: $${product.price}</p>
                         <p>Цвет: ${product.color}</p>
                         <p>Размер: ${product.size}</p>
-                        <button class="btn add-to-cart" data-id="${product.id}">Добавить в корзину</button>
+                        <button class="btn add-to-cart" data-id="${product.id}">Добавить</button>
                     </div>
                     <div class="product-price">$${product.price}</div>
                 </div>
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const productId = this.getAttribute('data-id');
                 const product = products.find(p => p.id == productId);
                 if (product) {
-                    addToCart(product);
+                    addToCart(product, this);
                 }
             });
         });
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    function addToCart(product) {
+    function addToCart(product, button) {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
         let existingItem = cart.find(item => item.id === product.id);
 
@@ -198,7 +198,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         localStorage.setItem('cart', JSON.stringify(cart));
-        alert('Товар добавлен в корзину'); // Уведомление о добавлении в корзину
+
+        // Обновляем текст кнопки
+        button.textContent = 'Добавлен';
     }
 
     const prevButton = document.getElementById('prev-page');

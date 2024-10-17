@@ -20,3 +20,13 @@
 #clear-cart:hover {
     background-color: #333; /* Темно-серый фон при наведении */
 }
+.cart-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+    padding-bottom: 60px; /* Добавлен отступ снизу для контента */
+}

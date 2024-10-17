@@ -13,6 +13,12 @@ document.addEventListener('DOMContentLoaded', function() {
         overlay.style.display = 'none';
     }
 
+    function changeMainImage(img) {
+        var mainImage = document.getElementById('mainImage');
+        mainImage.src = img.src;
+        mainImage.alt = img.alt;
+    }
+
     function addToCart(product) {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
         let existingItem = cart.find(item => item.id === product.id);
@@ -24,28 +30,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         localStorage.setItem('cart', JSON.stringify(cart));
-        showModal(); // Показать модальное окно
+        setAddToCartButtonText(true); // Обновляем текст кнопки, указывая, что товар добавлен
     }
 
-    function showModal() {
-        var modal = document.getElementById('modal');
-        if (modal) {
-            modal.style.display = 'block';
-
-            var span = document.getElementsByClassName('close')[0];
-            if (span) {
-                span.onclick = function() {
-                    modal.style.display = 'none';
-                }
-            }
-
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = 'none';
-                }
-            }
+    function setAddToCartButtonText(added) {
+        let addToCartButton = document.getElementById('addToCart');
+        if (addToCartButton) {
+            addToCartButton.textContent = added ? 'Добавлено в корзину' : 'Добавить в корзину';
         } else {
-            console.error('Модальное окно не найдено');
+            console.error('Кнопка "Добавить в корзину" не найдена');
         }
     }
 
@@ -101,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     let addToCartButton = document.getElementById('addToCart');
                     if (addToCartButton) {
                         addToCartButton.onclick = () => addToCart(product);
+                        setAddToCartButtonText(false); // Инициализируем текст кнопки
                     } else {
                         console.error('Кнопка "Добавить в корзину" не найдена');
                     }
@@ -112,19 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch(error => console.error('Ошибка загрузки данных:', error));
     }
-    function addToCart(product) {
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        let existingItem = cart.find(item => item.id === product.id);
 
-        if (existingItem) {
-            existingItem.quantity += 1;
-        } else {
-            cart.push({ ...product, quantity: 1 });
-        }
-
-        localStorage.setItem('cart', JSON.stringify(cart));
-        alert('Товар добавлен в корзину'); // Уведомление о добавлении в корзину
-    }
     function updateBreadcrumbs(product, category) {
         const breadcrumbsList = document.getElementById('breadcrumbs-list');
         if (breadcrumbsList) {
