@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         localStorage.setItem('cart', JSON.stringify(cart));
-        setAddToCartButtonText(true); // Обновляем текст кнопки, указывая, что товар добавлен
+        setAddToCartButtonText(true); 
     }
 
     function setAddToCartButtonText(added) {
@@ -90,11 +90,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         console.error('Элемент для связанных товаров не найден');
                     }
 
-                    // Убедитесь, что кнопка существует и имеет правильный ID
                     let addToCartButton = document.getElementById('addToCart');
                     if (addToCartButton) {
                         addToCartButton.onclick = () => addToCart(product);
-                        setAddToCartButtonText(false); // Инициализируем текст кнопки
+                        setAddToCartButtonText(false); 
                     } else {
                         console.error('Кнопка "Добавить в корзину" не найдена');
                     }
@@ -112,17 +111,15 @@ document.addEventListener('DOMContentLoaded', function() {
         if (breadcrumbsList) {
             breadcrumbsList.innerHTML = ''; 
 
-            // Добавляем "Home"
             const homeLi = document.createElement('li');
             homeLi.innerHTML = '<a href="/">Home</a>';
             breadcrumbsList.appendChild(homeLi);
 
-            // Добавляем категорию
+           
             const categoryLi = document.createElement('li');
             categoryLi.innerHTML = `<a href="/store.html?category=${category}">${category === 'men' ? 'Мужская одежда' : 'Женская одежда'}</a>`;
             breadcrumbsList.appendChild(categoryLi);
 
-            // Добавляем товар
             const productLi = document.createElement('li');
             productLi.setAttribute('aria-current', 'page');
             productLi.textContent = product.name;
@@ -132,6 +129,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Инициализация отображения товара
     loadProductData(productId, category);
 });

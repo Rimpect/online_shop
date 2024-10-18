@@ -163,7 +163,7 @@ body {
     margin-right: 0; /* Убираем отступ справа */
 }
 
-/* Стили для товаров */
+
 .product-item {
     display: none; /* Скрываем все товары по умолчанию */
     float: left; /* Размещаем товары в строках */
@@ -172,11 +172,10 @@ body {
 }
 
 .products {
-    overflow: hidden; /* Очищаем float */
+    overflow: hidden; 
 }
 
-/* Другие стили */
-/* ... (ваши существующие стили) */
+
 .product-image {
     width: 100%; /* Ширина изображения 100% от контейнера */
     height: auto; /* Автоматическая высота, чтобы сохранить пропорции */
@@ -195,4 +194,72 @@ body {
 }
 .products-header{
     left: auto;
+}
+
+@media (max-width: 768px) {
+    
+    body {
+        width: 100%;
+        margin: 0;
+    }
+    #toggleColumnsBtn {
+        display: none;
+    }
+
+    .breadcrumbs ol {
+        flex-direction: column;
+    }
+
+    .breadcrumbs li:not(:last-child)::after {
+        content: '';
+    }
+
+  
+    .categories {
+        width: 100%;
+        float: none;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+   
+    .product-item {
+        width: 100%;
+        float: none;
+    }
+
+    /* Грид контейнер */
+    .grid-container {
+        grid-template-columns: 100%;
+        width: 100%;
+    }
+
+    /* Выравнивание кнопки вправо */
+    .products-header {
+        text-align: center;
+    }
+
+    /* Стили для блоков изображений */
+    .image-blocks {
+        flex-direction: column;
+    }
+
+    .image-block {
+        width: 100%;
+    }
+
+    /* Стили для пагинации */
+    .pagination {
+        flex-direction: column;
+    }
+
+    /* Стили для товаров */
+    .product-item {
+        display: block;
+    }
+
+    /* Другие стили */
+    .product-image {
+        max-width: 100%;
+    }
 }

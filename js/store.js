@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         document.getElementById('page-number').textContent = page;
 
-        // Добавляем обработчик событий для кнопки "Добавить в корзину"
+      
         document.querySelectorAll('.add-to-cart').forEach(button => {
             button.addEventListener('click', function() {
                 const productId = this.getAttribute('data-id');
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
             col.className = `col ${colClass}`;
         });
 
-        // Обновляем количество товаров на странице в зависимости от количества колонок
+      
         productsPerPage = columns === 3 ? 6 : 8;
         totalPages = Math.ceil(products.length / productsPerPage);
         redistributeProducts();
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function redistributeProducts() {
         const container = document.querySelector('.row');
-        container.innerHTML = ''; // Очищаем контейнер
+        container.innerHTML = ''; 
 
         const start = (currentPage - 1) * productsPerPage;
         const end = start + productsPerPage;
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let productCount = 0;
         let productsToShow = [];
 
-        // Собираем товары для текущей страницы
+
         for (let i = start; i < end; i++) {
             if (i < products.length) {
                 productsToShow.push(products[i]);
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        // Отображаем товары
+       
         productsToShow.forEach(product => {
             const col = document.createElement('div');
             col.className = `col ${columns === 3 ? 's12 m6 l4' : 's12 m6 l3'}`;
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
             container.appendChild(col);
         });
 
-        // Дополняем пустыми элементами до нужного количества
+       
         while (productCount < productsPerPage) {
             const col = document.createElement('div');
             col.className = `col ${columns === 3 ? 's12 m6 l4' : 's12 m6 l3'}`;
@@ -149,7 +149,6 @@ document.addEventListener('DOMContentLoaded', function() {
             productCount++;
         }
 
-        // Добавляем обработчик событий для кнопки "Добавить в корзину"
         document.querySelectorAll('.add-to-cart').forEach(button => {
             button.addEventListener('click', function() {
                 const productId = this.getAttribute('data-id');
@@ -163,19 +162,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateBreadcrumbs(category, productId) {
         const breadcrumbsList = document.getElementById('breadcrumbs-list');
-        breadcrumbsList.innerHTML = ''; // Очищаем текущие хлебные крошки
+        breadcrumbsList.innerHTML = ''; 
 
-        // Добавляем "Home"
+     
         const homeLi = document.createElement('li');
         homeLi.innerHTML = '<a href="/">Home</a>';
         breadcrumbsList.appendChild(homeLi);
 
-        // Добавляем категорию
+        
         const categoryLi = document.createElement('li');
         categoryLi.innerHTML = `<a href="/store.html?category=${category}">${category === 'men' ? 'Мужская одежда' : 'Женская одежда'}</a>`;
         breadcrumbsList.appendChild(categoryLi);
 
-        // Если есть ID товара, добавляем товар
+        
         if (productId) {
             const product = products.find(p => p.id === productId);
             if (product) {
@@ -199,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         localStorage.setItem('cart', JSON.stringify(cart));
 
-        // Обновляем текст кнопки
+ 
         button.textContent = 'Добавлен';
     }
 

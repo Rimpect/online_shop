@@ -6,7 +6,7 @@
     <title>Корзина</title>
     <link rel="stylesheet" href="/css/header_and_footer.css">
     <link rel="stylesheet" href="/css/cart.css">
-    <!-- Подключение Materialize CSS -->
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -23,18 +23,6 @@
                     </a>
                 </div>
                 <ul class="header_list">
-                                  <!-- <li class="header_item">
-                        <a href="#!" class="header_link">НОВОСТИ</a>
-                    </li>
-                    <li class="header_item">
-                        <a href="#!" class="header_link"> О НАС</a>
-                    </li>
-                    <li class="header_item">
-                        <a href="#!" class="header_link">НОВИНКИ</a>
-                    </li>
-                    <li class="header_item">
-                        <a href="#!" class="header_link">КОНТАКТЫ</a>
-                    </li>-->
                     <li class="header_item">
                         <a href="/shoping_card.html" class="header_link">
                             <div class="cart-icon-wrapper">
@@ -51,22 +39,33 @@
         <h1>Корзина</h1>
         <div class="row">
             <div class="col s12">
-                <ul class="collection" id="cart-items"></ul>
-                <div id="cart-items" class="collection"></div>
+                <ul class="collection" id="cart-items">
+
+                    <li class="collection-item">
+                        <a href="/product.html?id=123&category=men">
+                            <img src="product-image.jpg" alt="Product Name" class="cart-item-image">
+                        </a>
+                        <div class="cart-item-details">
+                            <h3>Product Name</h3>
+                            <p>Price: $100</p>
+                            <p>Количество: <input type="number" value="1" min="1" class="item-quantity" data-id="123"></p>
+                            <p>Сумма: $100</p>
+                            <button class="btn-small remove-item" data-id="123">Удалить</button>
+                        </div>
+                    </li>
+                 
+                </ul>
                 <div id="total-price">Total: $0</div>
                 <button id="clear-cart">Оформить заказ</button>
-                
             </div>
         </div>
     </div>
     <button id="scrollToTopBtn" class="scroll-to-top">↑</button>
-    <!-- Подключение Materialize JS и jQuery -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="/js/shoping_card.js"></script>
-
-    <script src ="/js/scroll_to_top.js"></script>
-  
+    <script src="/js/scroll_to_top.js"></script>
     <div class="footer">
         <div class="footer_nav">
             <ul class="footer_list">
@@ -84,7 +83,6 @@
                 <li class="footer_item">
                     <a href="/store.html?category=women" class="header_link">Женщинам</a>
                 </li>
-               
             </ul>
             <ul class="footer_list">
                 <li class="footer_item">

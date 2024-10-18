@@ -48,12 +48,12 @@ document.addEventListener('DOMContentLoaded', function() {
         this.style.backgroundColor = '#000000'; 
     });
 
-    // Пример продукта (замените на вашу логику)
+   
     let product = { id: 1, name: 'Product 1' };
 
     // Обновление счетчика корзины и текста кнопки каждую секунду
     setInterval(function() {
-        updateAddToCartButton(product);
+  
         updateCartCount();
-    }, 1000); // 1000 миллисекунд = 1 секунда
+    }, 1000); 
 });
